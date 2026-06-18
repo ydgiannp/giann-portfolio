@@ -1,0 +1,105 @@
+{
+  "personal": {
+    "name": "Yulius Giann",
+    "title": "Software Developer",
+    "email": "ydgiannp@gmail.com",
+    "phone": "+62 856-4041-8447",
+    "location": "Jakarta, Indonesia",
+    "bio": "Full-stack developer in Jakarta building Vue frontends, Go backends, and GCP-deployed production systems.",
+    "social": {
+      "github": "https://github.com/ydgiannp",
+      "linkedin": "https://www.linkedin.com/in/yulius-giann-951677124/",
+      "twitter": "https://x.com/ydgiannp"
+    }
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["Vue.js", "Nuxt.js", "TypeScript", "Tailwind CSS", "JavaScript", "Next.js", "React"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Go", "Python", "Firebase", "Caching", "Logging", "Pub/Sub", "Event Driven Architecture", "Clean Architecture"]
+    },
+    {
+      "category": "Tools & Others",
+      "items": ["Google Cloud Platform", "Docker", "Git", "CI/CD", "Agile Methodologies"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Rentalnow.id",
+      "description": "Motorcycle rental marketplace for fleet owners and customers across Jakarta.",
+      "problem": "Rental operators were managing inventory and bookings through WhatsApp and paper records, with no real-time visibility into fleet availability.",
+      "outcome": "Shipped a live platform at rentalnow.id — operators now manage their fleet, track orders, and handle bookings from a single dashboard with calendar integration.",
+      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase"],
+      "image": "/projects/ecommerce.jpg",
+      "github": "https://github.com/ydgiannp/rentalnow",
+      "demo": "https://rentalnow.id",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "Real-time collaborative task board with drag-and-drop and team assignment.",
+      "problem": "A startup team was losing track of work across Slack threads and spreadsheets, with no clear ownership or deadline visibility across projects.",
+      "outcome": "Delivered a real-time task board with socket-based live updates and drag-and-drop — the team adopted it as their primary planning tool within a week.",
+      "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+      "image": "/projects/taskmanager.jpg",
+      "github": "https://github.com/yourusername/task-manager",
+      "demo": "https://taskmanager-demo.com",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "description": "Location-aware weather dashboard with interactive forecast charts and alerts.",
+      "problem": "Raw weather API responses were hard to interpret for end users who needed actionable, visual forecasts without reading JSON data.",
+      "outcome": "Open-sourced a mobile-first dashboard with interactive charts, location-based alerts, and 7-day forecasts built on the OpenWeather API.",
+      "technologies": ["React", "TypeScript", "Chart.js", "OpenWeather API"],
+      "image": "/projects/weather.jpg",
+      "github": "https://github.com/yourusername/weather-dashboard",
+      "demo": "https://weather-demo.com",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "Social Media Analytics",
+      "description": "Automated analytics dashboard for social metrics with trend detection and reporting.",
+      "problem": "A marketing team was manually pulling data from multiple platforms to build weekly reports, spending several hours per week on repetitive data work.",
+      "outcome": "Automated dashboard with trend detection and scheduled PDF reports replaced the manual process — reports that took hours now run on a schedule.",
+      "technologies": ["Next.js", "Python", "D3.js", "PostgreSQL", "FastAPI"],
+      "image": "/projects/analytics.jpg",
+      "github": "https://github.com/yourusername/analytics",
+      "demo": "https://analytics-demo.com",
+      "featured": true
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "Tech Company Inc.",
+      "position": "Senior Software Engineer",
+      "duration": "2023 - Present",
+      "description": "Led development of microservices architecture, mentored junior developers, and improved system performance by 40%.",
+      "achievements": [
+        "Architected and implemented scalable microservices",
+        "Reduced API response time by 60%",
+        "Mentored 5 junior developers"
+      ]
+    },
+    {
+      "id": 2,
+      "company": "StartUp XYZ",
+      "position": "Full Stack Developer",
+      "duration": "2021 - 2023",
+      "description": "Developed and maintained full-stack web applications using React and Node.js, collaborated with cross-functional teams.",
+      "achievements": [
+        "Built 10+ production features",
+        "Improved code coverage to 85%",
+        "Implemented CI/CD pipeline"
+      ]
+    }
+  ]
+}
