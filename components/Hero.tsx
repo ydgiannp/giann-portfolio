@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
-import { GithubLogo, LinkedinLogo, XLogo } from '@phosphor-icons/react'
+import { GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
 import portfolioData from '@/data/portfolio.json'
 
 export default function Hero() {
@@ -57,7 +57,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-base text-muted max-w-md mb-12 leading-relaxed"
           >
-            Vue and React frontends, Go backends, deployed on GCP. Based in Jakarta, available remotely.
+            Vue and Nuxt frontends, Go backends, Laravel full-stack applications, and scalable cloud systems on GCP. Based in Jakarta, available remotely.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3">
@@ -99,15 +99,6 @@ export default function Hero() {
               className="text-muted hover:text-snow transition-colors duration-200"
             >
               <LinkedinLogo size={20} />
-            </a>
-            <a
-              href={personal.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X (Twitter)"
-              className="text-muted hover:text-snow transition-colors duration-200"
-            >
-              <XLogo size={20} />
             </a>
           </motion.div>
         </motion.div>

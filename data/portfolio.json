@@ -5,11 +5,10 @@
     "email": "ydgiannp@gmail.com",
     "phone": "+62 856-4041-8447",
     "location": "Jakarta, Indonesia",
-    "bio": "Full-stack developer in Jakarta building Vue frontends, Go backends, and GCP-deployed production systems.",
+    "bio": "9 years+ building Vue and Nuxt frontends, Go backends, Laravel full-stack applications, and scalable cloud systems — Redis-optimized APIs, event-driven architecture, and Google Cloud Functions. Based in Jakarta, available remotely.",
     "social": {
       "github": "https://github.com/ydgiannp",
-      "linkedin": "https://www.linkedin.com/in/yulius-giann-951677124/",
-      "twitter": "https://x.com/ydgiannp"
+      "linkedin": "https://www.linkedin.com/in/yulius-giann-951677124/"
     }
   },
   "skills": [
@@ -19,11 +18,11 @@
     },
     {
       "category": "Backend",
-      "items": ["Go", "Python", "Firebase", "Caching", "Logging", "Pub/Sub", "Event Driven Architecture", "Clean Architecture"]
+      "items": ["Go", "Laravel", "Python", "Firebase", "Caching", "Logging", "Pub/Sub", "Event Driven Architecture", "Clean Architecture", "Microservices"]
     },
     {
       "category": "Tools & Others",
-      "items": ["Google Cloud Platform", "Docker", "Git", "CI/CD", "Agile Methodologies"]
+      "items": ["Google Cloud Platform", "Docker", "Git", "CI/CD", "Agile Methodologies", "Supabase","Redis","Vercel","Netlify"]
     }
   ],
   "projects": [
@@ -31,74 +30,75 @@
       "id": 1,
       "title": "Rentalnow.id",
       "description": "Motorcycle rental marketplace for fleet owners and customers across Jakarta.",
-      "problem": "Rental operators were managing inventory and bookings through WhatsApp and paper records, with no real-time visibility into fleet availability.",
-      "outcome": "Shipped a live platform at rentalnow.id — operators now manage their fleet, track orders, and handle bookings from a single dashboard with calendar integration.",
-      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase"],
+      "problem": "Rental operators managed fleet and bookings through WhatsApp and paper records — no real-time visibility into availability or maintenance schedules.",
+      "outcome": "Live platform at rentalnow.id — operators track fleet, orders, and bookings from one dashboard with maintenance scheduling, availability blocking, and calendar integration.",
+      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase", "Prisma","Netlify"],
       "image": "/projects/ecommerce.jpg",
-      "github": "https://github.com/ydgiannp/rentalnow",
       "demo": "https://rentalnow.id",
       "featured": true
     },
     {
       "id": 2,
-      "title": "Task Management App",
-      "description": "Real-time collaborative task board with drag-and-drop and team assignment.",
-      "problem": "A startup team was losing track of work across Slack threads and spreadsheets, with no clear ownership or deadline visibility across projects.",
-      "outcome": "Delivered a real-time task board with socket-based live updates and drag-and-drop — the team adopted it as their primary planning tool within a week.",
-      "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+      "title": "Prophack Japan",
+      "description": "Japan Properties website with property listings, search filters, and contact forms for inquiries. Also user can set its preferences for property and search for properties that match the preferences.",
+      "problem": "Property listings and inquiries were managed manually via spreadsheets and email, causing slow response times and missed leads.",
+      "outcome": "Centralized platform with dynamic listings, search filters, and a preferences-based matching feature — inquiries now flow directly through the site.",
+      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Nuxt/UI", "Supabase", "Vercel"],
       "image": "/projects/taskmanager.jpg",
-      "github": "https://github.com/yourusername/task-manager",
-      "demo": "https://taskmanager-demo.com",
+      "demo": "https://prophack-japan-blue.vercel.app/",
       "featured": true
     },
     {
       "id": 3,
-      "title": "Weather Dashboard",
-      "description": "Location-aware weather dashboard with interactive forecast charts and alerts.",
-      "problem": "Raw weather API responses were hard to interpret for end users who needed actionable, visual forecasts without reading JSON data.",
-      "outcome": "Open-sourced a mobile-first dashboard with interactive charts, location-based alerts, and 7-day forecasts built on the OpenWeather API.",
-      "technologies": ["React", "TypeScript", "Chart.js", "OpenWeather API"],
+      "title": "HappyNest School",
+      "description": "A school website with information about the school, programs, and contact forms for inquiries with CMS for easy content management.",
+      "problem": "The school's static site had limited program info and no easy way for prospective parents to inquire or learn about enrollment.",
+      "outcome": "Modern site with full program details, a CMS for the school team to update content independently, and inquiry forms for prospective families.",
+      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
       "image": "/projects/weather.jpg",
-      "github": "https://github.com/yourusername/weather-dashboard",
-      "demo": "https://weather-demo.com",
+      "demo": "https://www.happynestschool.com/",
       "featured": false
-    },
-    {
-      "id": 4,
-      "title": "Social Media Analytics",
-      "description": "Automated analytics dashboard for social metrics with trend detection and reporting.",
-      "problem": "A marketing team was manually pulling data from multiple platforms to build weekly reports, spending several hours per week on repetitive data work.",
-      "outcome": "Automated dashboard with trend detection and scheduled PDF reports replaced the manual process — reports that took hours now run on a schedule.",
-      "technologies": ["Next.js", "Python", "D3.js", "PostgreSQL", "FastAPI"],
-      "image": "/projects/analytics.jpg",
-      "github": "https://github.com/yourusername/analytics",
-      "demo": "https://analytics-demo.com",
-      "featured": true
     }
   ],
   "experience": [
     {
       "id": 1,
-      "company": "Tech Company Inc.",
-      "position": "Senior Software Engineer",
-      "duration": "2023 - Present",
-      "description": "Led development of microservices architecture, mentored junior developers, and improved system performance by 40%.",
+      "company": "Kompas Daily Newspaper (kompas.id)",
+      "position": "Software Developer Lead",
+      "duration": "Oct 2021 — Present",
+      "description": "Lead a team of 4 software developers building and maintaining web applications for one of Indonesia's largest newspapers. Collaborate with cross-functional teams to deliver high-quality software under tight editorial deadlines.",
       "achievements": [
-        "Architected and implemented scalable microservices",
-        "Reduced API response time by 60%",
-        "Mentored 5 junior developers"
+        "Designed and maintained a static content delivery strategy for web and mobile homepages, significantly improving first-time load performance",
+        "Designed Add-on Subscription service to enable seamless subscription management and payment processing for digital content access",
+        "Enabled tokenization for recurring membership payments, allowing users to securely store payment information for future transactions",
+        "Optimized Redis caching for the Articles API to reduce database load, prevent race conditions, and ensure timely reflection of editorial updates",
+        "Architected and integrated Google Cloud Functions into the Articles backend to enhance service scalability and streamline inter-service communication",
+        "Led frontend modernization of the payment service, migrating from Laravel templates to a fully component-based Vue.js architecture",
+        "Implemented event-driven architecture and background job processing in the payment service, reducing deployment overhead and enabling seamless external service integrations",
+        "Fostered agile development through regular 1-on-1s, team mentoring, and managing user story prioritization aligned to business goals"
       ]
     },
     {
       "id": 2,
-      "company": "StartUp XYZ",
-      "position": "Full Stack Developer",
-      "duration": "2021 - 2023",
-      "description": "Developed and maintained full-stack web applications using React and Node.js, collaborated with cross-functional teams.",
+      "company": "Kompas Daily Newspaper (kompas.id)",
+      "position": "Frontend Developer",
+      "duration": "Sep 2017 — Sep 2021",
+      "description": "Frontend developer responsible for building and maintaining user-facing web applications and platforms for kompas.id.",
       "achievements": [
-        "Built 10+ production features",
-        "Improved code coverage to 85%",
-        "Implemented CI/CD pipeline"
+        "Translated UI/UX designs into WordPress themes using HTML, CSS, JavaScript, and PHP",
+        "Migrated existing WordPress layouts and functionality to Nuxt.js (Vue.js SSR) with Tailwind CSS, ensuring feature parity and measurable performance improvements",
+        "Improved site maintainability, scalability, and load times through frontend tooling and optimization techniques"
+      ]
+    },
+    {
+      "id": 3,
+      "company": "Jurnal Consulting Indonesia (jurnal.id)",
+      "position": "Fullstack Developer",
+      "duration": "Apr 2016 — Jul 2017",
+      "description": "Developed and maintained web applications for Jurnal.id, an accounting SaaS platform used by businesses across Indonesia.",
+      "achievements": [
+        "Built RESTful APIs and created the company's first open API with OAuth 2.0 authorization for third-party data integrations",
+        "Contributed to the Jurnal.id Developer Center, enabling external companies to integrate their accounting data into the platform"
       ]
     }
   ]

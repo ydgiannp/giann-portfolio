@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
-import { GithubLogo, LinkedinLogo, XLogo } from '@phosphor-icons/react'
+import { GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
 import portfolioData from '@/data/portfolio.json'
 
 export default function Contact() {
@@ -47,15 +47,6 @@ export default function Contact() {
                 className="text-muted hover:text-snow transition-colors duration-200 active:scale-90"
               >
                 <LinkedinLogo size={18} />
-              </a>
-              <a
-                href={personal.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-                className="text-muted hover:text-snow transition-colors duration-200 active:scale-90"
-              >
-                <XLogo size={18} />
               </a>
             </div>
           </div>
