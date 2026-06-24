@@ -1,9 +1,12 @@
 import portfolioData from '@/data/portfolio.json'
 
+type FaqItem = { question: string; answer: string }
+
 export const dynamic = 'force-static'
 
 export function GET() {
   const { personal, skills, projects, experience } = portfolioData
+  const faq = (portfolioData as unknown as { faq: FaqItem[] }).faq
 
   const skillLines = skills
     .map((s) => `- ${s.category}: ${s.items.join(', ')}`)
@@ -25,6 +28,10 @@ export function GET() {
     })
     .join('\n\n')
 
+  const faqLines = faq
+    .map((item) => `**${item.question}**\n${item.answer}`)
+    .join('\n\n')
+
   const body = `# ${personal.name} — ${personal.title}
 
 > ${personal.bio}
@@ -33,6 +40,10 @@ export function GET() {
 
 **Skills:**
 ${skillLines}
+
+## FAQ
+
+${faqLines}
 
 ## Work Experience
 

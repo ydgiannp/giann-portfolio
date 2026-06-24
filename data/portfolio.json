@@ -69,12 +69,12 @@
       "description": "Lead a team of 4 software developers building and maintaining web applications for one of Indonesia's largest newspapers. Collaborate with cross-functional teams to deliver high-quality software under tight editorial deadlines.",
       "achievements": [
         "Designed and maintained a static content delivery strategy for web and mobile homepages, significantly improving first-time load performance",
-        "Designed Add-on Subscription service to enable seamless subscription management and payment processing for digital content access",
-        "Enabled tokenization for recurring membership payments, allowing users to securely store payment information for future transactions",
+        "Designed Add-on Subscription service acquiring 457 new subscribers daily, enabling seamless subscription management and payment processing for digital content access",
+        "Enabled tokenization for recurring membership payments, reducing checkout friction for returning subscribers",
         "Optimized Redis caching for the Articles API to reduce database load, prevent race conditions, and ensure timely reflection of editorial updates",
         "Architected and integrated Google Cloud Functions into the Articles backend to enhance service scalability and streamline inter-service communication",
         "Led frontend modernization of the payment service, migrating from Laravel templates to a fully component-based Vue.js architecture",
-        "Implemented event-driven architecture and background job processing in the payment service, reducing deployment overhead and enabling seamless external service integrations",
+        "Implemented event-driven architecture and background job processing across a payment system handling 12,500+ monthly transactions, reducing deployment overhead and enabling seamless external service integrations",
         "Fostered agile development through regular 1-on-1s, team mentoring, and managing user story prioritization aligned to business goals"
       ]
     },
@@ -100,6 +100,36 @@
         "Built RESTful APIs and created the company's first open API with OAuth 2.0 authorization for third-party data integrations",
         "Contributed to the Jurnal.id Developer Center, enabling external companies to integrate their accounting data into the platform"
       ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Are you available for freelance or remote work?",
+      "answer": "Yes. I'm based in Jakarta and actively open to remote freelance and contract opportunities. I've collaborated with international clients and am comfortable working across time zones."
+    },
+    {
+      "question": "What technologies do you specialize in?",
+      "answer": "My core stack is Vue.js and Nuxt.js on the frontend, Go and Laravel on the backend, and Vercel for deployment. I also work with TypeScript, Tailwind CSS, Firebase, Supabase, Redis, Google Cloud Platform and Docker depending on project needs."
+    },
+    {
+      "question": "Do you have experience building large-scale or high-traffic systems?",
+      "answer": "Yes. I lead engineering at Kompas Daily (kompas.id), one of Indonesia's most-visited news platforms. I architect systems that handle high editorial throughput — Redis-optimized article APIs, Google Cloud Functions for scalable backend services, and event-driven payment pipelines."
+    },
+    {
+      "question": "Can you build a complete full-stack application?",
+      "answer": "Yes. I build end-to-end: Vue and Nuxt frontends, Go or Laravel backends, database design, cloud deployment, and CI/CD pipelines. I've shipped live products including a motorcycle rental marketplace, a Japan property listings platform, and a school website with CMS."
+    },
+    {
+      "question": "Do you have team leadership experience?",
+      "answer": "Yes. I currently lead a team of 4 developers at Kompas Daily — handling technical architecture, code reviews, 1-on-1s, mentoring, and user story prioritization in an agile environment."
+    },
+    {
+      "question": "Have you worked on payment and subscription systems?",
+      "answer": "Yes. At Kompas Daily I built and maintain the full payment system processing 12,500+ monthly transactions across multiple services. This includes an Add-on Subscription service, tokenization for recurring membership payments, event-driven background job processing, and a Vue.js frontend migrated from Laravel templates."
+    },
+    {
+      "question": "What kind of projects are you best suited for?",
+      "answer": "I'm strongest on scalable web applications, frontend-heavy products with complex state, backend API design, GCP infrastructure, and modernizing legacy systems. I have experience across media, real estate, e-commerce, and education verticals."
     }
   ]
 }
