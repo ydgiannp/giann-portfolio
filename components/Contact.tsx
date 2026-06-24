@@ -35,7 +35,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-muted hover:text-snow transition-colors duration-200 active:scale-90"
+                className="text-snow/50 hover:text-snow transition-colors duration-200 active:scale-90"
               >
                 <GithubLogo size={18} />
               </a>
@@ -44,7 +44,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-muted hover:text-snow transition-colors duration-200 active:scale-90"
+                className="text-snow/50 hover:text-snow transition-colors duration-200 active:scale-90"
               >
                 <LinkedinLogo size={18} />
               </a>

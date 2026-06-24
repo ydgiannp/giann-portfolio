@@ -26,7 +26,7 @@ export default function Experience() {
                     </h3>
                     <p className="font-mono text-sm text-accent mt-0.5">{job.company}</p>
                   </div>
-                  <span className="font-mono text-xs text-muted shrink-0">
+                  <span className="font-mono text-xs text-snow/50 shrink-0">
                     {job.duration}
                   </span>
                 </div>

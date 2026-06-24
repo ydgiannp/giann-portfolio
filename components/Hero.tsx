@@ -55,7 +55,7 @@ export default function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="text-base text-muted max-w-md mb-12 leading-relaxed"
+            className="text-base text-snow/50 max-w-md mb-12 leading-relaxed"
           >
             Vue and Nuxt frontends, Go backends, Laravel full-stack applications, and scalable cloud systems on GCP. Based in Jakarta, available remotely.
           </motion.p>
@@ -87,7 +87,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-muted hover:text-snow transition-colors duration-200"
+              className="text-snow/50 hover:text-snow transition-colors duration-200"
             >
               <GithubLogo size={20} />
             </a>
@@ -96,7 +96,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-muted hover:text-snow transition-colors duration-200"
+              className="text-snow/50 hover:text-snow transition-colors duration-200"
             >
               <LinkedinLogo size={20} />
             </a>

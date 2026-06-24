@@ -17,10 +17,10 @@ export default function About() {
             </p>
             <div className="absolute inset-0 flex items-center">
               <div className="space-y-1 pl-2">
-                <p className="font-mono text-xs text-muted uppercase tracking-widest">
+                <p className="font-mono text-xs text-snow/50 uppercase tracking-widest">
                   Based in Jakarta
                 </p>
-                <p className="font-mono text-xs text-muted uppercase tracking-widest">
+                <p className="font-mono text-xs text-snow/50 uppercase tracking-widest">
                   Available remotely
                 </p>
               </div>
@@ -38,7 +38,7 @@ export default function About() {
             <div className="space-y-3 pt-8 border-t border-white/5">
               <a
                 href={`mailto:${personal.email}`}
-                className="flex items-center gap-3 text-sm text-muted hover:text-snow transition-colors duration-200 group"
+                className="flex items-center gap-3 text-sm text-snow/50 hover:text-snow transition-colors duration-200 group"
               >
                 <EnvelopeSimple
                   size={14}

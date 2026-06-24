@@ -31,7 +31,7 @@ export default function FAQ() {
                 <span className="text-base font-medium text-snow group-hover:text-accent transition-colors duration-200">
                   {item.question}
                 </span>
-                <span className="shrink-0 mt-0.5 text-muted group-hover:text-accent transition-colors duration-200">
+                <span className="shrink-0 mt-0.5 text-snow/50 group-hover:text-accent transition-colors duration-200">
                   {openIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                 </span>
               </button>
@@ -44,7 +44,7 @@ export default function FAQ() {
                     transition={{ duration: 0.28, ease: easing }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-6 text-sm text-muted leading-relaxed max-w-2xl">
+                    <p className="pb-6 text-sm text-snow/50 leading-relaxed max-w-2xl">
                       {item.answer}
                     </p>
                   </motion.div>

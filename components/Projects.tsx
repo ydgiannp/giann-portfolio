@@ -49,7 +49,7 @@ export default function Projects() {
 
               {/* Number + title block */}
               <div className="flex items-start gap-4 mb-3">
-                <span className="font-mono text-xs text-muted mt-1.5 shrink-0 w-6">
+                <span className="font-mono text-xs text-snow/50 mt-1.5 shrink-0 w-6">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div className="min-w-0">
@@ -63,7 +63,7 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-muted leading-relaxed">
+                  <p className="text-sm text-snow/50 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 font-mono text-xs text-muted hover:text-snow border border-white/8 hover:border-white/20 px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
+                    className="flex items-center gap-1.5 font-mono text-xs text-snow/50 hover:text-snow border border-white/8 hover:border-white/20 px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
                   >
                     GitHub
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -100,7 +100,7 @@ export default function Projects() {
               {/* Case study grid */}
               <div className="ml-10 grid sm:grid-cols-2 gap-4 mb-6">
                 <div className="rounded-xl p-5 bg-ink border border-white/5">
-                  <p className="font-mono text-xs text-muted uppercase tracking-widest mb-3">Problem</p>
+                  <p className="font-mono text-xs text-snow/50 uppercase tracking-widest mb-3">Problem</p>
                   <p className="text-sm text-snow/70 leading-relaxed">{project.problem}</p>
                 </div>
                 <div className="rounded-xl p-5 bg-ink border border-accent/10">

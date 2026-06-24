@@ -46,7 +46,7 @@ function TechChip({ name }: { readonly name: string }) {
       ) : (
         <span className="w-[13px] h-[13px] shrink-0" />
       )}
-      <span className="font-mono text-xs text-muted group-hover:text-snow transition-colors duration-200 whitespace-nowrap">
+      <span className="font-mono text-xs text-snow/50 group-hover:text-snow transition-colors duration-200 whitespace-nowrap">
         {name}
       </span>
     </div>

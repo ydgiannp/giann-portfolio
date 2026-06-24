@@ -44,7 +44,7 @@ export default function Navigation() {
               <Link
                 key={href}
                 href={href}
-                className="font-outfit text-sm font-medium text-muted hover:text-snow transition-colors duration-200"
+                className="font-outfit text-sm font-medium text-snow/50 hover:text-snow transition-colors duration-200"
               >
                 {label}
               </Link>
@@ -52,7 +52,7 @@ export default function Navigation() {
           </div>
 
           <button
-            className="md:hidden text-muted hover:text-snow transition-colors duration-200"
+            className="md:hidden text-snow/50 hover:text-snow transition-colors duration-200"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
@@ -69,7 +69,7 @@ export default function Navigation() {
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 font-outfit text-sm font-medium text-muted hover:text-snow transition-colors duration-200 border-b border-white/5 last:border-0"
+              className="block py-3 font-outfit text-sm font-medium text-snow/50 hover:text-snow transition-colors duration-200 border-b border-white/5 last:border-0"
             >
               {label}
             </Link>
