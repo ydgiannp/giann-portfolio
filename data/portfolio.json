@@ -69,12 +69,11 @@
       "description": "Lead a team of 4 software developers building and maintaining web applications for one of Indonesia's largest newspapers. Collaborate with cross-functional teams to deliver high-quality software under tight editorial deadlines.",
       "achievements": [
         "Designed and maintained a static content delivery strategy for web and mobile homepages, significantly improving first-time load performance",
-        "Designed Add-on Subscription service acquiring 457 new subscribers daily, enabling seamless subscription management and payment processing for digital content access",
-        "Enabled tokenization for recurring membership payments, reducing checkout friction for returning subscribers",
-        "Optimized Redis caching for the Articles API to reduce database load, prevent race conditions, and ensure timely reflection of editorial updates",
+        "Designed Add-on Subscription service acquiring 457 new subscribers daily, with tokenization support for frictionless recurring payments",
+        "Maintained and extended Redis caching across multiple services to reduce database load, prevent race conditions, and ensure timely editorial updates",
+        "Implemented centralized observability using OpenTelemetry and SigNoz across 5 microservices, enabling end-to-end distributed tracing that reduced cross-service debugging time to under 30 minutes",
         "Architected and integrated Google Cloud Functions into the Articles backend to enhance service scalability and streamline inter-service communication",
-        "Led frontend modernization of the payment service, migrating from Laravel templates to a fully component-based Vue.js architecture",
-        "Implemented event-driven architecture and background job processing across a payment system handling 12,500+ monthly transactions, reducing deployment overhead and enabling seamless external service integrations",
+        "Rebuilt the payment service end-to-end — migrating the frontend from Laravel to Vue.js and introducing event-driven architecture with background job processing, supporting 12,500+ monthly transactions",
         "Fostered agile development through regular 1-on-1s, team mentoring, and managing user story prioritization aligned to business goals"
       ]
     },
