@@ -101,6 +101,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${outfit.variable} ${jetbrainsMono.variable} antialiased bg-canvas text-snow`}>
+        <a
+          href="#home"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold"
+        >
+          Skip to content
+        </a>
         {children}
       </body>
     </html>

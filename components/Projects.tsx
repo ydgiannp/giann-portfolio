@@ -1,3 +1,6 @@
+'use client'
+
+import { ArrowSquareOut } from '@phosphor-icons/react'
 import portfolioData from '@/data/portfolio.json'
 
 const TECH_SLUGS: Record<string, string | null> = {
@@ -79,9 +82,7 @@ export default function Projects() {
                     className="flex items-center gap-1.5 font-mono text-xs text-snow/50 hover:text-snow border border-white/8 hover:border-white/20 px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
                   >
                     GitHub
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    <ArrowSquareOut size={12} aria-hidden />
                   </a>
                 )}
                 <a
@@ -91,9 +92,7 @@ export default function Projects() {
                   className="flex items-center gap-1.5 font-mono text-xs text-accent border border-accent/30 hover:bg-accent hover:text-white hover:border-accent px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
                 >
                   Live
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
+                  <ArrowSquareOut size={12} aria-hidden />
                 </a>
               </div>
 

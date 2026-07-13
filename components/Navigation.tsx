@@ -1,25 +1,45 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { List, X } from '@phosphor-icons/react'
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#about', label: 'About', id: 'about' },
+  { href: '#skills', label: 'Skills', id: 'skills' },
+  { href: '#projects', label: 'Projects', id: 'projects' },
+  { href: '#experience', label: 'Experience', id: 'experience' },
+  { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
+  const shouldReduce = useReducedMotion()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.id)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
+        }
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    )
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -40,13 +60,20 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label, id }) => (
               <Link
                 key={href}
                 href={href}
-                className="font-outfit text-sm font-medium text-snow/50 hover:text-snow transition-colors duration-200"
+                className={`font-outfit text-sm font-medium transition-colors duration-200 ${
+                  activeSection === id
+                    ? 'text-snow'
+                    : 'text-snow/50 hover:text-snow'
+                }`}
               >
                 {label}
+                {activeSection === id && (
+                  <span className="block h-px bg-accent mt-0.5 rounded-full" />
+                )}
               </Link>
             ))}
           </div>
@@ -62,20 +89,30 @@ export default function Navigation() {
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="md:hidden bg-canvas/95 backdrop-blur-md border-t border-white/5 px-4 pb-4">
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              className="block py-3 font-outfit text-sm font-medium text-snow/50 hover:text-snow transition-colors duration-200 border-b border-white/5 last:border-0"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="md:hidden bg-canvas/95 backdrop-blur-md border-t border-white/5 px-4 pb-4 overflow-hidden"
+            initial={shouldReduce ? false : { opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={shouldReduce ? {} : { opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {navLinks.map(({ href, label, id }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`block py-3 font-outfit text-sm font-medium transition-colors duration-200 border-b border-white/5 last:border-0 ${
+                  activeSection === id ? 'text-accent' : 'text-snow/50 hover:text-snow'
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }

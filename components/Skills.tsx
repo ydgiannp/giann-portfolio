@@ -34,19 +34,19 @@ function TechChip({ name }: { readonly name: string }) {
   const slug = ICON_SLUGS[name]
 
   return (
-    <div className="group flex items-center gap-2 px-3 py-2 bg-canvas rounded-lg border border-white/5 hover:border-accent/25 hover:bg-accent/5 transition-all duration-200 cursor-default">
+    <div className="group flex items-center gap-2 px-3 py-2 bg-elevated rounded-lg border border-white/10 hover:border-accent/40 hover:bg-accent/8 transition-all duration-200 cursor-default">
       {slug ? (
         <img
           src={`https://cdn.simpleicons.org/${slug}/f0f0f0`}
           alt=""
           width={13}
           height={13}
-          className="opacity-30 group-hover:opacity-80 transition-opacity duration-200 shrink-0"
+          className="opacity-60 group-hover:opacity-100 transition-opacity duration-200 shrink-0"
         />
       ) : (
         <span className="w-[13px] h-[13px] shrink-0" />
       )}
-      <span className="font-mono text-xs text-snow/50 group-hover:text-snow transition-colors duration-200 whitespace-nowrap">
+      <span className="font-mono text-xs text-snow/75 group-hover:text-snow transition-colors duration-200 whitespace-nowrap">
         {name}
       </span>
     </div>
@@ -64,8 +64,8 @@ function SkillCard({
     <div
       className={`rounded-2xl p-8 border ${
         accent
-          ? 'bg-canvas border-accent/15'
-          : 'bg-canvas border-white/5'
+          ? 'bg-ink border-accent/20'
+          : 'bg-ink border-white/8'
       }`}
     >
       <p className="font-mono text-xs text-accent tracking-widest uppercase mb-6">
@@ -94,7 +94,7 @@ export default function Skills() {
           <SkillCard category={frontend} />
           <SkillCard category={tools} />
           <div className="md:col-span-2">
-            <SkillCard category={backend} accent />
+            <SkillCard category={backend} />
           </div>
         </div>
       </div>

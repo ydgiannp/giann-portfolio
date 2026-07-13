@@ -9,6 +9,12 @@ export default function Footer() {
           <p className="font-mono text-xs text-muted">
             &copy; {currentYear} Yulius Giann. Built with Next.js and Tailwind CSS.
           </p>
+          <a
+            href="mailto:ydgiannp@gmail.com?subject=Privacy"
+            className="font-mono text-xs text-muted hover:text-snow transition-colors duration-200"
+          >
+            Privacy
+          </a>
         </div>
       </div>
     </footer>

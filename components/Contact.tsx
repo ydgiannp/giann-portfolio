@@ -10,8 +10,16 @@ export default function Contact() {
   const spring = { type: 'spring', stiffness: 400, damping: 28 } as const
 
   return (
-    <section id="contact" className="py-24 bg-canvas">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative py-24 bg-canvas overflow-hidden">
+      {/* Ambient radial glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse 60% 50% at 20% 60%, rgba(224,101,26,0.07) 0%, transparent 70%)',
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-4xl font-bold text-snow tracking-tight mb-4">
             Get in touch
@@ -23,7 +31,7 @@ export default function Contact() {
             <motion.a
               href={`mailto:${personal.email}`}
               className="inline-flex items-center gap-2 px-8 py-3.5 font-outfit font-semibold text-sm bg-accent text-white rounded-lg"
-              whileHover={shouldReduce ? {} : { scale: 1.03, backgroundColor: '#ea6e0e' }}
+              whileHover={shouldReduce ? {} : { scale: 1.03, backgroundColor: '#c9570e' }}
               whileTap={shouldReduce ? {} : { scale: 0.97 }}
               transition={spring}
             >

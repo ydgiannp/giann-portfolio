@@ -15,7 +15,7 @@ const config: Config = {
         elevated: '#181818',
         snow: '#f0f0f0',
         muted: '#5a5a5a',
-        accent: '#f97316',
+        accent: '#e0651a',
       },
       fontFamily: {
         outfit: ['var(--font-outfit)', 'sans-serif'],

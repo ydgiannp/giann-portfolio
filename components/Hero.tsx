@@ -64,7 +64,7 @@ export default function Hero() {
             <motion.a
               href="#projects"
               className="inline-flex items-center justify-center px-8 py-3.5 font-outfit font-semibold text-sm bg-accent text-white rounded-lg"
-              whileHover={shouldReduce ? {} : { scale: 1.03, backgroundColor: '#ea6e0e' }}
+              whileHover={shouldReduce ? {} : { scale: 1.03, backgroundColor: '#c9570e' }}
               whileTap={shouldReduce ? {} : { scale: 0.97 }}
               transition={spring}
             >
