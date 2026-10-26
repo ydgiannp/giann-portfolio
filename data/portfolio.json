@@ -27,7 +27,7 @@
     },
     {
       "title": "Keep it running",
-      "description": "After launch I watch the system, fix what breaks, and add what you need next. You get one person to call instead of an IT department to hire."
+      "description": "After launch I fix what breaks and stay on call as your technical advisor. You get one person to call instead of an IT department to hire."
     }
   ],
   "process": [
@@ -49,7 +49,7 @@
     },
     {
       "title": "Ongoing support",
-      "description": "An optional monthly retainer for maintenance and new features."
+      "description": "An optional monthly retainer for bug fixes and technical advice. New features are scoped and priced as a new stage."
     }
   ],
   "projects": [
@@ -137,7 +137,7 @@
     },
     {
       "question": "How much does it cost?",
-      "answer": "It depends on what you need. After our first call you get a written scope with a price per stage, or a monthly fee if you want ongoing support."
+      "answer": "Each project is priced per stage. After our first call you get a written scope with a fixed price for each stage. Support after launch is a separate monthly retainer."
     },
     {
       "question": "How long until it's live?",
@@ -145,7 +145,7 @@
     },
     {
       "question": "Who looks after it after launch?",
-      "answer": "I can, through a monthly retainer. If you have your own team, I hand it over with documentation."
+      "answer": "I do, through an optional monthly retainer that covers bug fixes and technical advice. If you have your own team, I hand it over with documentation."
     },
     {
       "question": "Do I own the code and data?",
