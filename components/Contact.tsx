@@ -10,7 +10,7 @@ export default function Contact() {
   const spring = { type: 'spring', stiffness: 400, damping: 28 } as const
 
   return (
-    <section id="contact" className="relative py-24 bg-canvas overflow-hidden">
+    <section id="contact" className="relative py-24 bg-ink overflow-hidden">
       {/* Ambient radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -22,21 +22,29 @@ export default function Contact() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-4xl font-bold text-snow tracking-tight mb-4">
-            Get in touch
+            Tell me what&apos;s slowing your business down
           </h2>
           <p className="text-snow/50 mb-10 leading-relaxed">
-            Open to new projects and opportunities. Send me an email and I&apos;ll respond within a day.
+            The first call is free and takes 30 minutes. You&apos;ll leave with clear next steps, whether or not we work together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-start">
             <motion.a
-              href={`mailto:${personal.email}`}
+              href={personal.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 font-outfit font-semibold text-sm bg-accent text-white rounded-lg"
               whileHover={shouldReduce ? {} : { scale: 1.03, backgroundColor: '#c9570e' }}
               whileTap={shouldReduce ? {} : { scale: 0.97 }}
               transition={spring}
             >
-              Send an email
+              Chat on WhatsApp
             </motion.a>
+            <a
+              href={`mailto:${personal.email}`}
+              className="inline-flex items-center px-8 py-3.5 font-outfit font-semibold text-sm text-snow border border-white/10 rounded-lg hover:border-accent/50 hover:text-accent transition-colors duration-200"
+            >
+              Send an email
+            </a>
             <div className="flex items-center gap-4 sm:border-l sm:border-white/8 sm:pl-4">
               <a
                 href={personal.social.github}

@@ -5,11 +5,15 @@ type FaqItem = { question: string; answer: string }
 export const dynamic = 'force-static'
 
 export function GET() {
-  const { personal, skills, projects, experience } = portfolioData
+  const { personal, services, process, projects, experience } = portfolioData
   const faq = (portfolioData as unknown as { faq: FaqItem[] }).faq
 
-  const skillLines = skills
-    .map((s) => `- ${s.category}: ${s.items.join(', ')}`)
+  const serviceLines = services
+    .map((s) => `- **${s.title}:** ${s.description}`)
+    .join('\n')
+
+  const processLines = process
+    .map((s, i) => `${i + 1}. **${s.title}:** ${s.description}`)
     .join('\n')
 
   const experienceLines = experience
@@ -24,7 +28,9 @@ export function GET() {
       const featured = p.featured ? ' (Featured)' : ''
       const problem = 'problem' in p ? `- **Problem:** ${(p as { problem: string }).problem}\n` : ''
       const outcome = 'outcome' in p ? `- **Outcome:** ${(p as { outcome: string }).outcome}\n` : ''
-      return `### ${p.title}${featured}\n${p.description}\n${problem}${outcome}- **Tech:** ${p.technologies.join(', ')}\n- **Live:** ${p.demo}`
+      const tech = p.technologies.length ? `- **Tech:** ${p.technologies.join(', ')}\n` : ''
+      const live = 'demo' in p ? `- **Live:** ${(p as { demo: string }).demo}` : ''
+      return `### ${p.title}${featured}\n${p.description}\n${problem}${outcome}${tech}${live}`.trimEnd()
     })
     .join('\n\n')
 
@@ -36,10 +42,13 @@ export function GET() {
 
 > ${personal.bio}
 
-## About
+## Services
 
-**Skills:**
-${skillLines}
+${serviceLines}
+
+## How we work
+
+${processLines}
 
 ## FAQ
 
@@ -55,6 +64,7 @@ ${projectLines}
 
 ## Contact
 
+- **WhatsApp:** ${personal.whatsapp}
 - **Email:** ${personal.email}
 - **GitHub:** ${personal.social.github}
 - **LinkedIn:** ${personal.social.linkedin}

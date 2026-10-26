@@ -35,7 +35,7 @@ export default function Hero() {
             variants={fadeUp}
             className="font-mono text-xs text-accent tracking-widest uppercase mb-8"
           >
-            Software Developer &middot; {personal.location}
+            {personal.title} &middot; {personal.location}
           </motion.p>
 
           <motion.h1
@@ -49,35 +49,37 @@ export default function Hero() {
             variants={fadeUp}
             className="text-xl md:text-2xl font-medium text-snow/80 mb-4 max-w-2xl leading-snug"
           >
-            I build web products that ship fast and{' '}
-            <span className="text-accent">scale reliably.</span>
+            You run the business.{' '}
+            <span className="text-accent">I&apos;ll handle the tech.</span>
           </motion.p>
 
           <motion.p
             variants={fadeUp}
-            className="text-base text-snow/50 max-w-md mb-12 leading-relaxed"
+            className="text-base text-snow/50 max-w-lg mb-12 leading-relaxed"
           >
-            Vue and Nuxt frontends, Go backends, Laravel full-stack applications, and scalable cloud systems on GCP. Based in Jakarta, available remotely.
+            I turn the way your business runs into software: booking systems, dashboards, online payments. Then I keep it running. I also work as a Software Engineer Lead at Kompas.id, where my team runs a payment system that handles 12,500+ transactions a month.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3">
             <motion.a
-              href="#projects"
+              href={personal.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3.5 font-outfit font-semibold text-sm bg-accent text-white rounded-lg"
               whileHover={shouldReduce ? {} : { scale: 1.03, backgroundColor: '#c9570e' }}
               whileTap={shouldReduce ? {} : { scale: 0.97 }}
               transition={spring}
             >
-              View my work
+              Book a free 30-min call
             </motion.a>
             <motion.a
-              href="#contact"
+              href="#projects"
               className="inline-flex items-center justify-center px-8 py-3.5 font-outfit font-semibold text-sm text-snow border border-white/10 rounded-lg hover:border-accent/50 hover:text-accent transition-colors duration-200"
               whileHover={shouldReduce ? {} : { scale: 1.03 }}
               whileTap={shouldReduce ? {} : { scale: 0.97 }}
               transition={spring}
             >
-              Get in touch
+              See client work
             </motion.a>
           </motion.div>
 

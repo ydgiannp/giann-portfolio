@@ -6,10 +6,11 @@ import { List, X } from '@phosphor-icons/react'
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
 
 const navLinks = [
-  { href: '#about', label: 'About', id: 'about' },
-  { href: '#skills', label: 'Skills', id: 'skills' },
-  { href: '#projects', label: 'Projects', id: 'projects' },
-  { href: '#experience', label: 'Experience', id: 'experience' },
+  { href: '#services', label: 'Services', id: 'services' },
+  { href: '#projects', label: 'Work', id: 'projects' },
+  { href: '#experience', label: 'Track record', id: 'experience' },
+  { href: '#process', label: 'Process', id: 'process' },
+  { href: '#faq', label: 'FAQ', id: 'faq' },
   { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 

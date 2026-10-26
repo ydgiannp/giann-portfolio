@@ -29,11 +29,11 @@ type Project = {
   id: number
   title: string
   description: string
-  problem: string
+  problem?: string
   outcome: string
   technologies: string[]
   github?: string
-  demo: string
+  demo?: string
   featured: boolean
 }
 
@@ -44,7 +44,7 @@ export default function Projects() {
     <section id="projects" className="py-24 bg-canvas">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-snow tracking-tight mb-16">
-          Selected projects
+          Client work
         </h2>
         <div className="divide-y divide-white/5">
           {projects.map((project, index) => (
@@ -85,25 +85,29 @@ export default function Projects() {
                     <ArrowSquareOut size={12} aria-hidden />
                   </a>
                 )}
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 font-mono text-xs text-accent border border-accent/30 hover:bg-accent hover:text-white hover:border-accent px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
-                >
-                  Live
-                  <ArrowSquareOut size={12} aria-hidden />
-                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 font-mono text-xs text-accent border border-accent/30 hover:bg-accent hover:text-white hover:border-accent px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
+                  >
+                    Live
+                    <ArrowSquareOut size={12} aria-hidden />
+                  </a>
+                )}
               </div>
 
               {/* Case study grid */}
               <div className="ml-10 grid sm:grid-cols-2 gap-4 mb-6">
-                <div className="rounded-xl p-5 bg-ink border border-white/5">
-                  <p className="font-mono text-xs text-snow/50 uppercase tracking-widest mb-3">Problem</p>
-                  <p className="text-sm text-snow/70 leading-relaxed">{project.problem}</p>
-                </div>
+                {project.problem && (
+                  <div className="rounded-xl p-5 bg-ink border border-white/5">
+                    <p className="font-mono text-xs text-snow/50 uppercase tracking-widest mb-3">Before</p>
+                    <p className="text-sm text-snow/70 leading-relaxed">{project.problem}</p>
+                  </div>
+                )}
                 <div className="rounded-xl p-5 bg-ink border border-accent/10">
-                  <p className="font-mono text-xs text-accent uppercase tracking-widest mb-3">Outcome</p>
+                  <p className="font-mono text-xs text-accent uppercase tracking-widest mb-3">After</p>
                   <p className="text-sm text-snow/70 leading-relaxed">{project.outcome}</p>
                 </div>
               </div>

@@ -1,134 +1,159 @@
 {
   "personal": {
     "name": "Yulius Giann",
-    "title": "Software Developer",
+    "title": "Part-time CTO",
     "email": "ydgiannp@gmail.com",
     "phone": "+62 856-4041-8447",
+    "whatsapp": "https://wa.me/6285640418447?text=Hi%20Yulius%2C%20I%27d%20like%20to%20talk%20about%20my%20business.",
     "location": "Jakarta, Indonesia",
-    "bio": "9 years+ building Vue and Nuxt frontends, Go backends, Laravel full-stack applications, and scalable cloud systems — Redis-optimized APIs, event-driven architecture, and Google Cloud Functions. Based in Jakarta, available remotely.",
+    "bio": "I've spent 9+ years building software. Today I'm a Software Engineer Lead at Kompas.id, and I work with business owners as their part-time CTO. I listen to how the business runs, decide what's worth building, build it, and stay around to keep it working.",
     "social": {
       "github": "https://github.com/ydgiannp",
       "linkedin": "https://www.linkedin.com/in/yulius-giann-951677124/"
     }
   },
-  "skills": [
+  "services": [
     {
-      "category": "Frontend",
-      "items": ["Vue.js", "Nuxt.js", "TypeScript", "Tailwind CSS", "JavaScript", "Next.js", "React"]
+      "title": "Turn your business into a plan",
+      "description": "You explain how things work today: WhatsApp orders, spreadsheets, paper forms. I map it into a written scope that says what to build first, what can wait, and what it will cost."
     },
     {
-      "category": "Backend",
-      "items": ["Go", "Laravel", "Python", "Firebase", "Caching", "Logging", "Pub/Sub", "Event Driven Architecture", "Clean Architecture", "Microservices"]
+      "title": "Build the software",
+      "description": "Booking systems, admin dashboards, property listings, QR attendance, online payments. I build them with the same practices I use for Kompas.id's payment system."
     },
     {
-      "category": "Tools & Others",
-      "items": ["Google Cloud Platform", "Docker", "Git", "CI/CD", "Agile Methodologies", "Supabase","Redis","Vercel","Netlify"]
+      "title": "Make the technical calls",
+      "description": "Hosting, tools, vendors, architecture. I choose them, explain why in plain language, and stay accountable for the choice."
+    },
+    {
+      "title": "Keep it running",
+      "description": "After launch I watch the system, fix what breaks, and add what you need next. You get one person to call instead of an IT department to hire."
+    }
+  ],
+  "process": [
+    {
+      "title": "Free 30-minute call",
+      "description": "Tell me how your business runs and where it gets stuck."
+    },
+    {
+      "title": "Written scope and price",
+      "description": "You see what gets built, in what order, and what it costs before any work starts."
+    },
+    {
+      "title": "Build in stages",
+      "description": "You try each part as it's finished and give feedback while changes are still cheap."
+    },
+    {
+      "title": "Launch and handover",
+      "description": "The code, domain, and data are registered in your name."
+    },
+    {
+      "title": "Ongoing support",
+      "description": "An optional monthly retainer for maintenance and new features."
     }
   ],
   "projects": [
     {
       "id": 1,
       "title": "Rentalnow.id",
-      "description": "Motorcycle rental marketplace for fleet owners and customers across Jakarta.",
-      "problem": "Rental operators managed fleet and bookings through WhatsApp and paper records — no real-time visibility into availability or maintenance schedules.",
-      "outcome": "Live platform at rentalnow.id — operators track fleet, orders, and bookings from one dashboard with maintenance scheduling, availability blocking, and calendar integration.",
-      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase", "Prisma","Netlify"],
-      "image": "/projects/ecommerce.jpg",
+      "description": "Motorcycle rental · Jakarta",
+      "problem": "The owner tracked bikes and bookings through WhatsApp chats and paper notes. There was no single place to see which bikes were free or due for service.",
+      "outcome": "One dashboard shows the whole fleet: availability, orders, and maintenance schedules, with a booking calendar. Customers book online at rentalnow.id.",
+      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase", "Prisma", "Netlify"],
       "demo": "https://rentalnow.id",
       "featured": true
     },
     {
       "id": 2,
       "title": "Prophack Japan",
-      "description": "Japan Properties website with property listings, search filters, and contact forms for inquiries. Also user can set its preferences for property and search for properties that match the preferences.",
-      "problem": "Property listings and inquiries were managed manually via spreadsheets and email, causing slow response times and missed leads.",
-      "outcome": "Centralized platform with dynamic listings, search filters, and a preferences-based matching feature — inquiries now flow directly through the site.",
+      "description": "Japanese property listings",
+      "problem": "Listings lived in spreadsheets and inquiries arrived by email, so replies were slow and some leads were missed.",
+      "outcome": "Buyers search listings, save their preferences, and get matched to properties that fit. Every inquiry comes through the site into one place.",
       "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Nuxt/UI", "Supabase", "Vercel"],
-      "image": "/projects/taskmanager.jpg",
       "demo": "https://prophack-japan-blue.vercel.app/",
       "featured": true
     },
     {
       "id": 3,
-      "title": "HappyNest School",
-      "description": "A school website with information about the school, programs, and contact forms for inquiries with CMS for easy content management.",
-      "problem": "The school's static site had limited program info and no easy way for prospective parents to inquire or learn about enrollment.",
-      "outcome": "Modern site with full program details, a CMS for the school team to update content independently, and inquiry forms for prospective families.",
-      "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
-      "image": "/projects/weather.jpg",
-      "demo": "https://www.happynestschool.com/",
+      "title": "Kemkominfo",
+      "description": "QR attendance system · Government ministry",
+      "outcome": "Attendance is recorded by scanning a QR code, and the records are ready for recap without manual data entry.",
+      "technologies": [],
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "Penggalan Cerita",
+      "description": "Digital wedding invitations",
+      "outcome": "Couples share their wedding invitation as a single link that guests open on their phone.",
+      "technologies": [],
       "featured": false
     }
   ],
   "experience": [
     {
       "id": 1,
-      "company": "Kompas Daily Newspaper (kompas.id)",
-      "position": "Software Developer Lead",
+      "company": "Kompas.id",
+      "position": "Software Engineer Lead",
       "duration": "Oct 2021 — Present",
-      "description": "Lead a team of 4 software developers building and maintaining web applications for one of Indonesia's largest newspapers. Collaborate with cross-functional teams to deliver high-quality software under tight editorial deadlines.",
+      "description": "I lead a team of 4 engineers at one of Indonesia's largest news publishers, where outages and slow pages cost readers and subscription revenue.",
       "achievements": [
-        "Designed and maintained a static content delivery strategy for web and mobile homepages, significantly improving first-time load performance",
-        "Designed Add-on Subscription service acquiring 457 new subscribers daily, with tokenization support for frictionless recurring payments",
-        "Maintained and extended Redis caching across multiple services to reduce database load, prevent race conditions, and ensure timely editorial updates",
-        "Implemented centralized observability using OpenTelemetry and SigNoz across 5 microservices, enabling end-to-end distributed tracing that reduced cross-service debugging time to under 30 minutes",
-        "Architected and integrated Google Cloud Functions into the Articles backend to enhance service scalability and streamline inter-service communication",
-        "Rebuilt the payment service end-to-end — migrating the frontend from Laravel to Vue.js and introducing event-driven architecture with background job processing, supporting 12,500+ monthly transactions",
-        "Fostered agile development through regular 1-on-1s, team mentoring, and managing user story prioritization aligned to business goals"
+        "Built an add-on subscription with automatic recurring payments that brings in 457 new subscribers a day",
+        "Rebuilt the payment system end to end; it now handles 12,500+ transactions a month",
+        "Set up monitoring across 5 services so the cause of a production issue is found in under 30 minutes",
+        "Made the web and mobile homepages load faster for first-time visitors",
+        "Run 1-on-1s, mentor the team, and prioritize work against business goals"
       ]
     },
     {
       "id": 2,
-      "company": "Kompas Daily Newspaper (kompas.id)",
+      "company": "Kompas.id",
       "position": "Frontend Developer",
       "duration": "Sep 2017 — Sep 2021",
-      "description": "Frontend developer responsible for building and maintaining user-facing web applications and platforms for kompas.id.",
+      "description": "Built and maintained the reader-facing website of kompas.id.",
       "achievements": [
-        "Translated UI/UX designs into WordPress themes using HTML, CSS, JavaScript, and PHP",
-        "Migrated existing WordPress layouts and functionality to Nuxt.js (Vue.js SSR) with Tailwind CSS, ensuring feature parity and measurable performance improvements",
-        "Improved site maintainability, scalability, and load times through frontend tooling and optimization techniques"
+        "Moved the site from WordPress to a modern framework with faster page loads"
       ]
     },
     {
       "id": 3,
-      "company": "Jurnal Consulting Indonesia (jurnal.id)",
+      "company": "Jurnal.id",
       "position": "Fullstack Developer",
       "duration": "Apr 2016 — Jul 2017",
-      "description": "Developed and maintained web applications for Jurnal.id, an accounting SaaS platform used by businesses across Indonesia.",
+      "description": "Worked on an accounting platform used by businesses across Indonesia.",
       "achievements": [
-        "Built RESTful APIs and created the company's first open API with OAuth 2.0 authorization for third-party data integrations",
-        "Contributed to the Jurnal.id Developer Center, enabling external companies to integrate their accounting data into the platform"
+        "Built the company's first open API, so other businesses could connect their own apps to their accounting data"
       ]
     }
   ],
   "faq": [
     {
-      "question": "Are you available for freelance or remote work?",
-      "answer": "Yes. I'm based in Jakarta and actively open to remote freelance and contract opportunities. I've collaborated with international clients and am comfortable working across time zones."
+      "question": "What does a part-time CTO actually do?",
+      "answer": "The same job a full-time CTO does, for the hours your business needs: deciding what to build, choosing the technology, building it, and keeping it running."
     },
     {
-      "question": "What technologies do you specialize in?",
-      "answer": "My core stack is Vue.js and Nuxt.js on the frontend, Go and Laravel on the backend, and Vercel for deployment. I also work with TypeScript, Tailwind CSS, Firebase, Supabase, Redis, Google Cloud Platform and Docker depending on project needs."
+      "question": "I'm not technical. Can we still work together?",
+      "answer": "Yes. You explain how the business works. I handle the technical side and explain each decision in plain language before we make it."
     },
     {
-      "question": "Do you have experience building large-scale or high-traffic systems?",
-      "answer": "Yes. I lead engineering at Kompas Daily (kompas.id), one of Indonesia's most-visited news platforms. I architect systems that handle high editorial throughput — Redis-optimized article APIs, Google Cloud Functions for scalable backend services, and event-driven payment pipelines."
+      "question": "How much does it cost?",
+      "answer": "It depends on what you need. After our first call you get a written scope with a price per stage, or a monthly fee if you want ongoing support."
     },
     {
-      "question": "Can you build a complete full-stack application?",
-      "answer": "Yes. I build end-to-end: Vue and Nuxt frontends, Go or Laravel backends, database design, cloud deployment, and CI/CD pipelines. I've shipped live products including a motorcycle rental marketplace, a Japan property listings platform, and a school website with CMS."
+      "question": "How long until it's live?",
+      "answer": "The timeline comes with the written scope, split into stages so you can start using parts of the system early."
     },
     {
-      "question": "Do you have team leadership experience?",
-      "answer": "Yes. I currently lead a team of 4 developers at Kompas Daily — handling technical architecture, code reviews, 1-on-1s, mentoring, and user story prioritization in an agile environment."
+      "question": "Who looks after it after launch?",
+      "answer": "I can, through a monthly retainer. If you have your own team, I hand it over with documentation."
     },
     {
-      "question": "Have you worked on payment and subscription systems?",
-      "answer": "Yes. At Kompas Daily I built and maintain the full payment system processing 12,500+ monthly transactions across multiple services. This includes an Add-on Subscription service, tokenization for recurring membership payments, event-driven background job processing, and a Vue.js frontend migrated from Laravel templates."
+      "question": "Do I own the code and data?",
+      "answer": "Yes. The code, domain, hosting accounts, and data are registered in your name."
     },
     {
-      "question": "What kind of projects are you best suited for?",
-      "answer": "I'm strongest on scalable web applications, frontend-heavy products with complex state, backend API design, GCP infrastructure, and modernizing legacy systems. I have experience across media, real estate, e-commerce, and education verticals."
+      "question": "We already have a system or an agency. Can you help?",
+      "answer": "Yes. I can review what you have, fix what's broken, or join vendor meetings as your technical advisor."
     }
   ]
 }

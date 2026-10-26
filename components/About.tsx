@@ -7,7 +7,7 @@ export default function About() {
   const { personal } = portfolioData
 
   return (
-    <section id="about" className="py-24 bg-ink">
+    <section id="about" className="py-24 bg-canvas">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left: large typographic display */}
@@ -30,7 +30,7 @@ export default function About() {
           {/* Right: bio and contact info */}
           <div className="md:pt-4">
             <h2 className="text-4xl font-bold text-snow tracking-tight mb-6">
-              About me
+              Who you&apos;ll work with
             </h2>
             <p className="text-snow/70 leading-relaxed mb-8 max-w-md">
               {personal.bio}

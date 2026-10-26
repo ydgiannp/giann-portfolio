@@ -30,13 +30,13 @@ export default function OGImage() {
           }}
         />
         <p style={{ color: '#e0651a', fontSize: 14, letterSpacing: '0.15em', marginBottom: 24, textTransform: 'uppercase' }}>
-          Software Developer · Jakarta, Indonesia
+          Part-time CTO · Jakarta, Indonesia
         </p>
         <p style={{ color: '#f0f0f0', fontSize: 80, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, margin: 0 }}>
           Yulius Giann
         </p>
         <p style={{ color: 'rgba(240,240,240,0.4)', fontSize: 22, marginTop: 24, lineHeight: 1.5 }}>
-          Vue frontends · Go backends · GCP systems
+          You run the business. I&apos;ll handle the tech.
         </p>
         <p style={{ position: 'absolute', right: 80, bottom: 72, color: '#e0651a', fontSize: 32, fontWeight: 700, letterSpacing: '-0.04em' }}>
           YG

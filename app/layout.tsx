@@ -22,7 +22,7 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Yulius Giann',
-  jobTitle: 'Software Developer',
+  jobTitle: 'Part-time CTO',
   url: siteUrl,
   email: 'ydgiannp@gmail.com',
   address: {
@@ -44,7 +44,7 @@ const personSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Yulius Giann — Software Developer',
+  name: 'Yulius Giann | Part-time CTO',
   url: siteUrl,
   author: {
     '@type': 'Person',
@@ -54,12 +54,11 @@ const websiteSchema = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Yulius Giann — Software Developer',
-  description: 'Full-stack developer in Jakarta building Vue frontends, Go backends, and GCP-deployed production systems.',
+  title: 'Yulius Giann | Part-time CTO for Growing Businesses',
+  description: "I turn how your business runs into software and keep it running after launch. 9+ years building products, including Kompas.id's payment system.",
   keywords: [
-    'Software Developer', 'Full-stack Developer', 'Vue.js', 'Nuxt.js', 'Go', 'Golang',
-    'React', 'Next.js', 'TypeScript', 'Google Cloud Platform', 'Jakarta', 'Indonesia',
-    'Web Developer', 'Frontend Developer', 'Backend Developer',
+    'Part-time CTO', 'Fractional CTO', 'IT Partner', 'Software Developer', 'Web Developer',
+    'Booking System', 'Business Software', 'Jakarta', 'Indonesia',
   ],
   authors: [{ name: 'Yulius Giann', url: siteUrl }],
   creator: 'Yulius Giann',
@@ -69,8 +68,8 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   openGraph: {
-    title: 'Yulius Giann — Software Developer',
-    description: 'Full-stack developer in Jakarta building fast, reliable web products with Vue, Go, and GCP.',
+    title: 'Yulius Giann | Part-time CTO for Growing Businesses',
+    description: "I turn how your business runs into software and keep it running after launch. 9+ years building products, including Kompas.id's payment system.",
     url: siteUrl,
     siteName: 'Yulius Giann Portfolio',
     type: 'website',
@@ -78,8 +77,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yulius Giann — Software Developer',
-    description: 'Full-stack developer in Jakarta. Vue frontends, Go backends, GCP-deployed.',
+    title: 'Yulius Giann | Part-time CTO for Growing Businesses',
+    description: "I turn how your business runs into software and keep it running after launch. 9+ years building products, including Kompas.id's payment system.",
     creator: '@ydgiannp',
   },
   alternates: {
