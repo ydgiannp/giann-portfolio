@@ -23,7 +23,7 @@
     },
     {
       "title": "Make the technical calls",
-      "description": "Hosting, tools, vendors, architecture. I choose them, explain why in plain language, and stay accountable for the choice."
+      "description": "Hosting, tools, vendors, architecture. I choose them and explain why in plain language. If your team builds with AI, I review what they ship so it stays secure and holds up as you grow."
     },
     {
       "title": "Keep it running",
@@ -68,7 +68,7 @@
       "title": "Prophack Japan",
       "description": "Japanese property listings",
       "problem": "Listings lived in spreadsheets and inquiries arrived by email, so replies were slow and some leads were missed.",
-      "outcome": "Buyers search listings, save their preferences, and get matched to properties that fit. Every inquiry comes through the site into one place.",
+      "outcome": "Buyers search listings, save their preferences, and get matched to properties that fit. Every inquiry comes through the site into one place. Their team now builds new features themselves with AI coding tools, and I review each one as their technical advisor.",
       "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Nuxt/UI", "Supabase", "Vercel"],
       "demo": "https://prophack-japan-blue.vercel.app/",
       "featured": true
@@ -132,6 +132,10 @@
       "answer": "The same job a full-time CTO does, for the hours your business needs: deciding what to build, choosing the technology, building it, and keeping it running."
     },
     {
+      "question": "Our team already builds with AI. Why would we need you?",
+      "answer": "AI writes code fast. It also writes security holes, slow pages, and payment bugs without warning you. I review each feature your team builds, the way I do for Prophack Japan, so you keep the speed and catch the problems early."
+    },
+    {
       "question": "I'm not technical. Can we still work together?",
       "answer": "Yes. You explain how the business works. I handle the technical side and explain each decision in plain language before we make it."
     },
@@ -145,7 +149,7 @@
     },
     {
       "question": "Who looks after it after launch?",
-      "answer": "I do, through an optional monthly retainer that covers bug fixes and technical advice. If you have your own team, I hand it over with documentation."
+      "answer": "I do, through an optional monthly retainer that covers bug fixes and technical advice. If you have your own team, I hand it over with step-by-step guides for every feature and setup instructions so your developers can run it themselves."
     },
     {
       "question": "Do I own the code and data?",
