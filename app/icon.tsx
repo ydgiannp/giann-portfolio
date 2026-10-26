@@ -10,14 +10,14 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: '#0b0b0b',
+          background: '#213555',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: 6,
+          
         }}
       >
-        <span style={{ color: '#e0651a', fontSize: 14, fontWeight: 700, letterSpacing: '-0.04em' }}>
+        <span style={{ color: '#E5D283', fontSize: 14, fontWeight: 700, letterSpacing: '-0.04em' }}>
           YG
         </span>
       </div>

@@ -1,140 +1,140 @@
-'use client'
-
-import { ArrowSquareOut } from '@phosphor-icons/react'
+import Image from 'next/image'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
-
-const TECH_SLUGS: Record<string, string | null> = {
-  'Nuxt.js': 'nuxtdotjs',
-  'Vue.js': 'vuedotjs',
-  'TypeScript': 'typescript',
-  'Tailwind CSS': 'tailwindcss',
-  'Firebase': 'firebase',
-  'React': 'react',
-  'Node.js': 'nodedotjs',
-  'Next.js': 'nextdotjs',
-  'Python': 'python',
-  'PostgreSQL': 'postgresql',
-  'FastAPI': 'fastapi',
-  'Nuxt/UI': 'nuxtdotjs',
-  'Supabase': 'supabase',
-  'Vercel': 'vercel',
-  'Netlify': 'netlify',
-  'Prisma': 'prisma',
-  'Go': 'go',
-  'Docker': 'docker',
-  'Redis': 'redis',
-}
 
 type Project = {
   id: number
   title: string
   description: string
-  problem: string
+  problem?: string
   outcome: string
   technologies: string[]
   github?: string
-  demo: string
+  demo?: string
   featured: boolean
+}
+
+type Shots = {
+  big: { src: string; alt: string; width: number; height: number }
+  small: { src: string; alt: string; width: number; height: number }
+  height: string
+}
+
+// Screenshots taken from the live client sites
+const SHOTS: Record<string, Shots> = {
+  'Rentalnow.id': {
+    big: { src: '/work/rentalnow-home.jpg', alt: 'Rentalnow.id home page with the booking form for motorbikes, cars and laptops', width: 2520, height: 2600 },
+    small: { src: '/work/rentalnow-fleet.jpg', alt: 'Rentalnow.id list of motorbikes with daily prices', width: 1440, height: 900 },
+    height: 'lg:min-h-[80svh]',
+  },
+  'Prophack Japan': {
+    big: { src: '/work/prophack-search.jpg', alt: 'Prophack Japan property search with filters for purpose, type, price and prefecture', width: 1748, height: 1194 },
+    small: { src: '/work/prophack-portal.jpg', alt: 'Prophack Japan member portal with saved favourites and quick search', width: 1748, height: 1092 },
+    height: 'lg:min-h-[64svh]',
+  },
+}
+
+function CaseText({ project }: { project: Project }) {
+  return (
+    <>
+      <p className="mt-3 text-soft">{project.description}</p>
+      {project.problem && (
+        <p className="mt-6">
+          <strong className="font-semibold">Before. </strong>
+          {project.problem}
+        </p>
+      )}
+      <p className="mt-4">
+        <strong className="font-semibold">After. </strong>
+        {project.outcome}
+      </p>
+      <p className="mt-6 t-small text-soft">{project.technologies.join(', ')}</p>
+      {project.demo && (
+        <a
+          href={project.demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link mt-4 inline-flex items-center gap-1 font-semibold"
+        >
+          {new URL(project.demo).hostname}
+          <ArrowUpRight size={16} aria-hidden />
+        </a>
+      )}
+    </>
+  )
 }
 
 export default function Projects() {
   const { projects } = portfolioData as { projects: Project[] }
+  const shown = projects.filter((p) => SHOTS[p.title])
+  const rest = projects.filter((p) => !SHOTS[p.title])
 
   return (
-    <section id="projects" className="py-24 bg-canvas">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-snow tracking-tight mb-16">
-          Selected projects
-        </h2>
-        <div className="divide-y divide-white/5">
-          {projects.map((project, index) => (
-            <article key={project.id} className="py-12 first:pt-0 last:pb-0">
+    <section id="projects" data-chapter="paper" className="ch-paper bg-ground text-ink py-24 md:py-28 overflow-hidden">
+      <div className="frame">
+        <h2 data-reveal className="t-head">Client work</h2>
+      </div>
 
-              {/* Number + title block */}
-              <div className="flex items-start gap-4 mb-3">
-                <span className="font-mono text-xs text-snow/50 mt-1.5 shrink-0 w-6">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
-                    <h3 className="text-xl sm:text-2xl font-bold text-snow tracking-tight">
-                      {project.title}
-                    </h3>
-                    {project.featured && (
-                      <span className="px-2 py-0.5 font-mono text-xs text-accent border border-accent/30 rounded shrink-0">
-                        featured
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-snow/50 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+      <div className="mt-16 md:mt-24 space-y-24 md:space-y-36">
+        {shown.map((project) => {
+          const shots = SHOTS[project.title]
+          return (
+            <article key={project.id} className="frame grid lg:grid-cols-12 gap-x-6">
+              <div
+                data-reveal
+                className={`relative overflow-hidden aspect-[4/5] md:aspect-[16/10] lg:aspect-auto ${shots.height} w-[110%] md:w-[calc(100%+var(--frame))] lg:w-auto -ml-[var(--frame)] lg:col-span-7`}
+              >
+                <Image
+                  src={shots.big.src}
+                  alt={shots.big.alt}
+                  width={shots.big.width}
+                  height={shots.big.height}
+                  sizes="(min-width: 1024px) 60vw, 110vw"
+                  className="drift absolute inset-0 h-full w-full object-cover object-left-top mix-blend-multiply"
+                />
               </div>
 
-              {/* Links — sit below title, indented to match */}
-              <div className="flex gap-2 mb-8 ml-10">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 font-mono text-xs text-snow/50 hover:text-snow border border-white/8 hover:border-white/20 px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
-                  >
-                    GitHub
-                    <ArrowSquareOut size={12} aria-hidden />
-                  </a>
-                )}
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 font-mono text-xs text-accent border border-accent/30 hover:bg-accent hover:text-white hover:border-accent px-3 py-2 rounded-lg transition-all duration-200 active:scale-95"
+              <div className="lg:col-start-9 lg:col-span-4 lg:self-end mt-10 lg:mt-0 max-w-[60ch] lg:max-w-none">
+                <h3 data-reveal className="t-head">{project.title}</h3>
+                <div data-reveal style={{ '--d': '80ms' } as React.CSSProperties}>
+                  <CaseText project={project} />
+                </div>
+                <div
+                  data-reveal
+                  style={{ '--d': '160ms' } as React.CSSProperties}
+                  className="mt-10 ml-auto lg:ml-0 w-[70%] lg:w-full aspect-[16/10] relative overflow-hidden"
                 >
-                  Live
-                  <ArrowSquareOut size={12} aria-hidden />
-                </a>
-              </div>
-
-              {/* Case study grid */}
-              <div className="ml-10 grid sm:grid-cols-2 gap-4 mb-6">
-                <div className="rounded-xl p-5 bg-ink border border-white/5">
-                  <p className="font-mono text-xs text-snow/50 uppercase tracking-widest mb-3">Problem</p>
-                  <p className="text-sm text-snow/70 leading-relaxed">{project.problem}</p>
-                </div>
-                <div className="rounded-xl p-5 bg-ink border border-accent/10">
-                  <p className="font-mono text-xs text-accent uppercase tracking-widest mb-3">Outcome</p>
-                  <p className="text-sm text-snow/70 leading-relaxed">{project.outcome}</p>
+                  <Image
+                    src={shots.small.src}
+                    alt={shots.small.alt}
+                    width={shots.small.width}
+                    height={shots.small.height}
+                    sizes="(min-width: 1024px) 30vw, 70vw"
+                    className="absolute inset-0 h-full w-full object-cover object-left-top mix-blend-multiply"
+                  />
                 </div>
               </div>
-
-              {/* Tech stack */}
-              <div className="ml-10 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => {
-                  const slug = TECH_SLUGS[tech]
-                  return (
-                    <div
-                      key={tech}
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 bg-ink rounded-lg border border-white/5"
-                    >
-                      {slug && (
-                        <img
-                          src={`https://cdn.simpleicons.org/${slug}/5a5a5a`}
-                          alt=""
-                          width={11}
-                          height={11}
-                          className="shrink-0"
-                        />
-                      )}
-                      <span className="font-mono text-xs text-muted">{tech}</span>
-                    </div>
-                  )
-                })}
-              </div>
-
             </article>
-          ))}
-        </div>
+          )
+        })}
+
+        {rest.length > 0 && (
+          <div className="frame grid md:grid-cols-2 gap-x-6 gap-y-16">
+            {rest.map((project, i) => (
+              <article
+                key={project.id}
+                data-reveal
+                style={{ '--d': `${i * 80}ms` } as React.CSSProperties}
+                className="bg-tone p-6 md:p-10"
+              >
+                <h3 className="t-head">{project.title}</h3>
+                <div className="max-w-[48ch]">
+                  <CaseText project={project} />
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

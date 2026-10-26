@@ -6,20 +6,23 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        canvas: '#0b0b0b',
-        ink: '#111111',
-        elevated: '#181818',
-        snow: '#f0f0f0',
-        muted: '#5a5a5a',
-        accent: '#e0651a',
+        // brand
+        eclipse: '#213555',
+        denim: '#4F709C',
+        honey: '#E5D283',
+        paper: '#F3F5F8',
+        // chapter roles, set by .ch-* classes in globals.css
+        ground: 'var(--ground)',
+        ink: 'var(--ink)',
+        soft: 'var(--soft)',
+        tone: 'var(--tone)',
       },
       fontFamily: {
-        outfit: ['var(--font-outfit)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        display: ['var(--font-display)', 'serif'],
+        text: ['var(--font-text)', 'sans-serif'],
       },
     },
   },
