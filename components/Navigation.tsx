@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { List, X } from '@phosphor-icons/react'
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
+import portfolioData from '@/data/portfolio.json'
 
 const navLinks = [
   { href: '#services', label: 'Services', id: 'services' },
@@ -11,23 +10,29 @@ const navLinks = [
   { href: '#experience', label: 'Track record', id: 'experience' },
   { href: '#process', label: 'Process', id: 'process' },
   { href: '#faq', label: 'FAQ', id: 'faq' },
-  { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const { personal } = portfolioData
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
-  const shouldReduce = useReducedMotion()
+  const [chapter, setChapter] = useState('eclipse')
 
+  // The bar takes the colours of the chapter passing under it
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setChapter((entry.target as HTMLElement).dataset.chapter || 'eclipse')
+        }
+      },
+      { rootMargin: '0px 0px -94% 0px' }
+    )
+    document.querySelectorAll('[data-chapter]').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.id)
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -36,7 +41,7 @@ export default function Navigation() {
       },
       { rootMargin: '-40% 0px -55% 0px' }
     )
-    sectionIds.forEach((id) => {
+    navLinks.forEach(({ id }) => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
@@ -44,76 +49,69 @@ export default function Navigation() {
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-canvas/90 backdrop-blur-md border-b border-white/5'
-          : 'bg-transparent'
-      }`}
+    <header
+      className={`ch-${chapter} fixed top-0 inset-x-0 z-40 bg-ground text-ink transition-colors duration-300`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link
-            href="#home"
-            className="font-mono text-sm font-medium text-snow hover:text-accent transition-colors duration-200"
-          >
-            YG
-          </Link>
+      <nav className="frame flex items-center justify-between h-[var(--header)]" aria-label="Main">
+        <a href="#home" className="font-display font-bold t-body tracking-tight">
+          {personal.name}
+          <span className="font-text font-normal text-soft t-small ml-2 hidden sm:inline">{personal.title}</span>
+        </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(({ href, label, id }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`font-outfit text-sm font-medium transition-colors duration-200 ${
-                  activeSection === id
-                    ? 'text-snow'
-                    : 'text-snow/50 hover:text-snow'
-                }`}
-              >
-                {label}
-                {activeSection === id && (
-                  <span className="block h-px bg-accent mt-0.5 rounded-full" />
-                )}
-              </Link>
-            ))}
-          </div>
-
-          <button
-            className="md:hidden text-snow/50 hover:text-snow transition-colors duration-200"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X size={20} weight="bold" /> : <List size={20} weight="bold" />}
-          </button>
+        <div className="hidden lg:flex items-center gap-8">
+          {navLinks.map(({ href, label, id }) => (
+            <a
+              key={href}
+              href={href}
+              aria-current={activeSection === id ? 'true' : undefined}
+              className={`t-small transition-colors duration-200 ${
+                activeSection === id ? 'text-ink font-semibold' : 'text-soft hover:text-ink'
+              }`}
+            >
+              {label}
+            </a>
+          ))}
+          <a href={personal.whatsapp} target="_blank" rel="noopener noreferrer" className="btn">
+            Book a free 30-min call
+          </a>
         </div>
-      </div>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="md:hidden bg-canvas/95 backdrop-blur-md border-t border-white/5 px-4 pb-4 overflow-hidden"
-            initial={shouldReduce ? false : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={shouldReduce ? {} : { opacity: 0, y: -8 }}
-            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+        <button
+          className="lg:hidden -mr-2 p-2 text-ink"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+        >
+          {menuOpen ? <X size={24} /> : <List size={24} />}
+        </button>
+      </nav>
+
+      {menuOpen && (
+        <div id="mobile-menu" className="lg:hidden bg-ground frame pb-6">
+          {navLinks.map(({ href, label, id }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className={`block py-3 t-lead font-display font-bold tracking-tight ${
+                activeSection === id ? 'text-ink' : 'text-soft'
+              }`}
+            >
+              {label}
+            </a>
+          ))}
+          <a
+            href={personal.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="btn mt-4 w-full"
           >
-            {navLinks.map(({ href, label, id }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className={`block py-3 font-outfit text-sm font-medium transition-colors duration-200 border-b border-white/5 last:border-0 ${
-                  activeSection === id ? 'text-accent' : 'text-snow/50 hover:text-snow'
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            Book a free 30-min call
+          </a>
+        </div>
+      )}
+    </header>
   )
 }

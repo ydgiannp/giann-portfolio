@@ -70,7 +70,7 @@
       "problem": "Listings lived in spreadsheets and inquiries arrived by email, so replies were slow and some leads were missed.",
       "outcome": "Buyers search listings, save their preferences, and get matched to properties that fit. Every inquiry comes through the site into one place. Their team now builds new features themselves with AI coding tools, and I review each one as their technical advisor.",
       "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Nuxt/UI", "Supabase", "Vercel"],
-      "demo": "https://prophack-japan-blue.vercel.app/",
+      "demo": "https://prophackjapan.com",
       "featured": true
     },
     {
@@ -95,7 +95,7 @@
       "id": 1,
       "company": "Kompas.id",
       "position": "Software Engineer Lead",
-      "duration": "Oct 2021 — Present",
+      "duration": "Oct 2021 - Present",
       "description": "I lead a team of 4 engineers at one of Indonesia's largest news publishers, where outages and slow pages cost readers and subscription revenue.",
       "achievements": [
         "Built an add-on subscription with automatic recurring payments that brings in 457 new subscribers a day",
@@ -109,7 +109,7 @@
       "id": 2,
       "company": "Kompas.id",
       "position": "Frontend Developer",
-      "duration": "Sep 2017 — Sep 2021",
+      "duration": "Sep 2017 - Sep 2021",
       "description": "Built and maintained the reader-facing website of kompas.id.",
       "achievements": [
         "Moved the site from WordPress to a modern framework with faster page loads"
@@ -119,7 +119,7 @@
       "id": 3,
       "company": "Jurnal.id",
       "position": "Fullstack Developer",
-      "duration": "Apr 2016 — Jul 2017",
+      "duration": "Apr 2016 - Jul 2017",
       "description": "Worked on an accounting platform used by businesses across Indonesia.",
       "achievements": [
         "Built the company's first open API, so other businesses could connect their own apps to their accounting data"

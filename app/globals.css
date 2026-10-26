@@ -2,76 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Brand palette: Eclipse #213555, Denim #4F709C, Desert Honey #E5D283.
+   Each section is a chapter with one ground, one ink, one soft ink and one tone step. */
+.ch-eclipse { --ground: #213555; --ink: #F3F5F8; --soft: #B4C3D8; --tone: #1B2C47; }
+.ch-deep    { --ground: #16243B; --ink: #F3F5F8; --soft: #B4C3D8; --tone: #213555; }
+.ch-denim   { --ground: #4F709C; --ink: #FFFFFF; --soft: #F3F5F8; --tone: #46669180; }
+.ch-paper   { --ground: #F3F5F8; --ink: #213555; --soft: #3E5A80; --tone: #E4E9F0; }
+.ch-honey   { --ground: #E5D283; --ink: #213555; --soft: #3A4A63; --tone: #DCC870; }
+
 :root {
-  --bg: #0b0b0b;
-  --bg-ink: #111111;
-  --bg-elevated: #181818;
-  --text: #f0f0f0;
-  --text-muted: #5a5a5a;
-  --accent: #e0651a; /* ponytail: desaturated from #f97316 (95% → ~78% sat) */
-  --accent-hover: #c9570e;
-  --font-outfit: 'Outfit', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
+  --frame: clamp(16px, 2.5vw, 40px);
+  --header: 64px;
 
-body {
-  color: var(--text);
-  background: var(--bg);
-  font-family: var(--font-outfit);
-}
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --step-display: clamp(2rem, 9.6vw, 11rem);
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-outfit);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
-}
-
-*:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header);
 }
 
-::-webkit-scrollbar {
-  width: 4px;
+body {
+  font-family: var(--font-text);
+  font-size: var(--step-body);
+  line-height: 1.55;
+  background: #213555;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-wrap: balance;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
-  border-radius: 2px;
+p { text-wrap: pretty; }
+
+.frame {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: var(--frame);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+@layer utilities {
+  .t-small { font-size: var(--step-small); line-height: 1.45; }
+  .t-body { font-size: var(--step-body); line-height: 1.55; }
+  .t-lead { font-size: var(--step-lead); line-height: 1.3; }
+  .t-head { font-size: var(--step-head); line-height: 0.98; }
+  .t-display { font-size: var(--step-display); line-height: 0.92; }
+  .tabular { font-variant-numeric: tabular-nums; }
 }
 
-/* Subtle noise overlay — breaks digital flatness without a dep */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 200px 200px;
+/* One button shape for the whole page: square, flat honey fill */
+@layer components {
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  background: #E5D283;
+  color: #213555;
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: var(--step-small);
+  white-space: nowrap;
+  transition: background-color 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+.btn:hover { background: #EDDDA0; }
+.btn:active { transform: translateY(1px); }
+}
+
+.link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 200ms var(--ease-out);
+}
+.link:hover { text-decoration-thickness: 2px; }
+
+*:focus-visible {
+  outline: 2px solid #E5D283;
+  outline-offset: 3px;
+}
+.ch-paper *:focus-visible,
+.ch-honey *:focus-visible { outline-color: #213555; }
+
+::selection { background: #E5D283; color: #213555; }
+
+/* Hero entrance: pure CSS, always ends visible, no script needed */
+@media (prefers-reduced-motion: no-preference) {
+  [data-rise] {
+    animation: rise 700ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+}
+
+/* Section entrances. html.js is set by RevealObserver after it has marked
+   what is already on screen, so the page reads fully without JavaScript. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow drift on the client screenshots, tied to scroll */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .drift {
+      animation: drift linear both;
+      animation-timeline: view();
+    }
+  }
+}
+@keyframes drift {
+  from { transform: scale(1.08) translateY(-3%); }
+  to { transform: scale(1.08) translateY(3%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

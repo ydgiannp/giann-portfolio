@@ -8,20 +8,24 @@ import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import RevealObserver from '@/components/RevealObserver'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <>
       <Navigation />
-      <Hero />
-      <Services />
-      <Projects />
-      <Experience />
-      <About />
-      <Process />
-      <FAQ />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <Services />
+        <Projects />
+        <Experience />
+        <About />
+        <Process />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+      <RevealObserver />
+    </>
   )
 }

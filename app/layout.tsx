@@ -1,20 +1,20 @@
 import type { Metadata } from 'next'
-import { Outfit, JetBrains_Mono } from 'next/font/google'
+import { Crimson_Pro, Manrope } from 'next/font/google'
 import './globals.css'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yuliusgiann.vercel.app'
 
-const outfit = Outfit({
+const display = Crimson_Pro({
   subsets: ['latin'],
-  variable: '--font-outfit',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
+  weight: ['700', '800'],
   display: 'swap',
 })
 
-const jetbrainsMono = JetBrains_Mono({
+const text = Manrope({
   subsets: ['latin'],
-  variable: '--font-mono',
-  weight: ['400', '500'],
+  variable: '--font-text',
+  weight: ['400', '600'],
   display: 'swap',
 })
 
@@ -92,17 +92,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${text.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([personSchema, websiteSchema]) }}
         />
       </head>
-      <body className={`${outfit.variable} ${jetbrainsMono.variable} antialiased bg-canvas text-snow`}>
+      <body className="ch-eclipse bg-ground text-ink antialiased">
         <a
           href="#home"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:btn"
         >
           Skip to content
         </a>
