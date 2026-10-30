@@ -23,7 +23,7 @@ export default function Services() {
               <div
                 data-reveal
                 style={{ '--d': `${i * 70}ms` } as React.CSSProperties}
-                className="frame min-h-[132px] md:min-h-[20vh] py-8"
+                className="frame min-h-32 md:min-h-[20vh] py-8"
               >
                 <h3 className="flex items-center gap-[0.35em] text-[6.4vw] md:t-head">
                   <Icon aria-hidden weight="duotone" className="shrink-0 w-[0.85em] h-[0.85em]" />

@@ -54,7 +54,7 @@ export default function Contact() {
             />
             <button type="submit" className="btn !min-h-14">
               Send on WhatsApp
-              <ArrowRight size={18} weight="bold" aria-hidden />
+              <ArrowRight size={20} aria-hidden />
             </button>
           </div>
           <p id="contact-help" role="status" className="mt-4 t-small text-soft">

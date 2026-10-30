@@ -1,29 +1,21 @@
-import type { Icon } from '@phosphor-icons/react'
-import { Clock, Buildings, Compass } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
 
 // Facts a scanning reader wants, marked like a highlighter
-const MARKS: { phrase: string; className: string; icon: Icon }[] = [
-  { phrase: '9+ years', className: 'bg-honey text-eclipse', icon: Clock },
-  { phrase: 'Software Engineer Lead at Kompas.id', className: 'bg-denim text-white', icon: Buildings },
-  { phrase: 'part-time CTO', className: 'bg-honey text-eclipse', icon: Compass },
-]
+const MARKS = ['9+ years', 'Software Engineer Lead at Kompas.id', 'part-time CTO']
 
-const mark = 'px-[0.1em] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]'
+const mark = 'bg-honey text-eclipse px-[0.1em] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]'
 
 function highlight(text: string) {
-  const pattern = new RegExp(`(${MARKS.map((m) => m.phrase.replace(/[.+]/g, '\\$&')).join('|')})`)
-  return text.split(pattern).map((part, i) => {
-    const m = MARKS.find((x) => x.phrase === part)
-    return m ? (
-      <span key={i} className={`${m.className} ${mark}`}>
-        <m.icon aria-hidden weight="bold" className="inline w-[0.8em] h-[0.8em] mr-[0.2em] -mt-[0.15em]" />
+  const pattern = new RegExp(`(${MARKS.map((m) => m.replace(/[.+]/g, '\\$&')).join('|')})`)
+  return text.split(pattern).map((part, i) =>
+    MARKS.includes(part) ? (
+      <span key={i} className={mark}>
         {part}
       </span>
     ) : (
       part
     )
-  })
+  )
 }
 
 export default function About() {
@@ -43,7 +35,7 @@ export default function About() {
           className="mt-12 md:mt-16 t-lead !leading-[1.3] md:columns-2 gap-8 text-soft"
         >
           {highlight(body)}{' '}
-          <a href="#contact" className={`bg-eclipse text-paper ${mark} hover:bg-denim transition-colors duration-200`}>
+          <a href="#contact" className="link text-ink">
             {closing}
           </a>
         </p>
