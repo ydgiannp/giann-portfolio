@@ -1,10 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { MapTrifold, Code, GitFork, Heartbeat } from '@phosphor-icons/react'
 import portfolioData from '@/data/portfolio.json'
 
 // Colour each band takes when its switch is on
 const BAND_CHAPTERS = ['ch-honey', 'ch-paper', 'ch-denim', 'ch-deep']
+// One icon per service, same order as portfolio.json
+const ICONS = [MapTrifold, Code, GitFork, Heartbeat]
 
 export default function Services() {
   const { services } = portfolioData
@@ -22,6 +25,7 @@ export default function Services() {
         {services.map((service, i) => {
           const isOn = on[i]
           const id = `service-${i}`
+          const Icon = ICONS[i % ICONS.length]
           return (
             <li
               key={service.title}
@@ -34,8 +38,9 @@ export default function Services() {
               >
                 <h3
                   id={`${id}-title`}
-                  className={`text-[6.4vw] md:t-head transition-colors duration-300 ${isOn ? 'text-ink' : 'text-soft'}`}
+                  className={`flex items-center gap-[0.35em] text-[6.4vw] md:t-head transition-colors duration-300 ${isOn ? 'text-ink' : 'text-soft'}`}
                 >
+                  <Icon aria-hidden weight="duotone" className="shrink-0 w-[0.85em] h-[0.85em]" />
                   {service.title}
                 </h3>
 

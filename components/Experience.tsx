@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { Briefcase, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
 
 export default function Experience() {
@@ -46,13 +47,21 @@ export default function Experience() {
                         <td className="md:w-[30%] md:py-3.5 md:pr-6 align-top max-md:block">
                           {k === 0 ? (
                             <>
+                              <Briefcase aria-hidden weight="duotone" className="inline w-[1.1em] h-[1.1em] mr-1.5 -mt-[0.2em]" />
                               <span className="font-semibold">{job.position}</span>
                               <span className="text-soft">, {job.company}</span>
                             </>
                           ) : null}
                         </td>
                         <td className={`md:py-3.5 md:pr-4 align-top max-md:block ${k === 0 ? 'max-md:mt-2' : ''}`}>
-                          {line}
+                          {k === 0 ? (
+                            line
+                          ) : (
+                            <span className="flex gap-2">
+                              <CheckCircle aria-hidden weight="duotone" className="shrink-0 w-[1.1em] h-[1.1em] mt-[0.2em] text-soft" />
+                              {line}
+                            </span>
+                          )}
                         </td>
                       </tr>
                     )

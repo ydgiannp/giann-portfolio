@@ -1,4 +1,8 @@
+import { Phone, FileText, Stack, RocketLaunch, Lifebuoy } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
+
+// One icon per step, same order as portfolio.json
+const ICONS = [Phone, FileText, Stack, RocketLaunch, Lifebuoy]
 
 // Bottom edge of the slip, cut like a receipt
 function zigzag(teeth = 28, depth = 10) {
@@ -23,18 +27,26 @@ export default function Process() {
           style={{ '--d': '100ms', clipPath: zigzag() } as React.CSSProperties}
           className="ch-paper bg-ground text-ink md:col-start-7 md:col-span-6 lg:col-span-5 max-w-[520px] w-full px-6 sm:px-8 pt-4 pb-14"
         >
-          {process.map((step, i) => (
-            <li key={step.title} className="mt-7">
-              {i === last ? (
-                <p className="-mx-6 sm:-mx-8 px-6 sm:px-8 min-h-[44px] flex items-center bg-eclipse text-paper font-semibold">
-                  {step.title}
-                </p>
-              ) : (
-                <p className="font-semibold">{step.title}</p>
-              )}
-              <p className="mt-1 text-soft">{step.description}</p>
-            </li>
-          ))}
+          {process.map((step, i) => {
+            const Icon = ICONS[i % ICONS.length]
+            const icon = <Icon aria-hidden weight="duotone" size={22} className="shrink-0" />
+            return (
+              <li key={step.title} className="mt-7">
+                {i === last ? (
+                  <p className="-mx-6 sm:-mx-8 px-6 sm:px-8 min-h-[44px] flex items-center gap-2.5 bg-eclipse text-paper font-semibold">
+                    {icon}
+                    {step.title}
+                  </p>
+                ) : (
+                  <p className="flex items-center gap-2.5 font-semibold">
+                    {icon}
+                    {step.title}
+                  </p>
+                )}
+                <p className="mt-1 pl-[32px] text-soft">{step.description}</p>
+              </li>
+            )
+          })}
         </ol>
       </div>
     </section>

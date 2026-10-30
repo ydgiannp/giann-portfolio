@@ -1,10 +1,12 @@
+import type { Icon } from '@phosphor-icons/react'
+import { Clock, Buildings, Compass } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
 
 // Facts a scanning reader wants, marked like a highlighter
-const MARKS: { phrase: string; className: string }[] = [
-  { phrase: '9+ years', className: 'bg-honey text-eclipse' },
-  { phrase: 'Software Engineer Lead at Kompas.id', className: 'bg-denim text-white' },
-  { phrase: 'part-time CTO', className: 'bg-honey text-eclipse' },
+const MARKS: { phrase: string; className: string; icon: Icon }[] = [
+  { phrase: '9+ years', className: 'bg-honey text-eclipse', icon: Clock },
+  { phrase: 'Software Engineer Lead at Kompas.id', className: 'bg-denim text-white', icon: Buildings },
+  { phrase: 'part-time CTO', className: 'bg-honey text-eclipse', icon: Compass },
 ]
 
 const mark = 'px-[0.1em] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]'
@@ -15,6 +17,7 @@ function highlight(text: string) {
     const m = MARKS.find((x) => x.phrase === part)
     return m ? (
       <span key={i} className={`${m.className} ${mark}`}>
+        <m.icon aria-hidden weight="bold" className="inline w-[0.8em] h-[0.8em] mr-[0.2em] -mt-[0.15em]" />
         {part}
       </span>
     ) : (
