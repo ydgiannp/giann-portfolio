@@ -123,20 +123,6 @@ p { text-wrap: pretty; }
   transform: none;
 }
 
-/* Slow drift on the client screenshots, tied to scroll */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .drift {
-      animation: drift linear both;
-      animation-timeline: view();
-    }
-  }
-}
-@keyframes drift {
-  from { transform: scale(1.08) translateY(-3%); }
-  to { transform: scale(1.08) translateY(3%); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }

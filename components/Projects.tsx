@@ -12,12 +12,12 @@ type Project = {
   github?: string
   demo?: string
   featured: boolean
+  testimonial?: { quote: string; author: string }
 }
 
 type Shots = {
   big: { src: string; alt: string; width: number; height: number }
   small: { src: string; alt: string; width: number; height: number }
-  height: string
 }
 
 // Screenshots taken from the live client sites
@@ -25,12 +25,10 @@ const SHOTS: Record<string, Shots> = {
   'Rentalnow.id': {
     big: { src: '/work/rentalnow-home.jpg', alt: 'Rentalnow.id home page with the booking form for motorbikes, cars and laptops', width: 2520, height: 2600 },
     small: { src: '/work/rentalnow-fleet.jpg', alt: 'Rentalnow.id list of motorbikes with daily prices', width: 1440, height: 900 },
-    height: 'lg:min-h-[80svh]',
   },
   'Prophack Japan': {
-    big: { src: '/work/prophack-search.jpg', alt: 'Prophack Japan property search with filters for purpose, type, price and prefecture', width: 1748, height: 1194 },
-    small: { src: '/work/prophack-portal.jpg', alt: 'Prophack Japan member portal with saved favourites and quick search', width: 1748, height: 1092 },
-    height: 'lg:min-h-[64svh]',
+    big: { src: '/work/prophack-results.jpg', alt: 'Prophack Japan search results showing condo listings with photos, prices in yen and dollars, and floor area', width: 2560, height: 1640 },
+    small: { src: '/work/prophack-detail.jpg', alt: 'Prophack Japan property detail page with a photo gallery and price', width: 2560, height: 1640 },
   },
 }
 
@@ -48,6 +46,14 @@ function CaseText({ project }: { project: Project }) {
         <strong className="font-semibold">After. </strong>
         {project.outcome}
       </p>
+      {project.testimonial && (
+        <figure className="mt-6 border-l-2 border-current pl-4">
+          <blockquote className="italic">“{project.testimonial.quote}”</blockquote>
+          <figcaption className="mt-3 t-small text-soft">
+            {project.testimonial.author}
+          </figcaption>
+        </figure>
+      )}
       <p className="mt-6 t-small text-soft">{project.technologies.join(', ')}</p>
       {project.demo && (
         <a
@@ -70,7 +76,7 @@ export default function Projects() {
   const rest = projects.filter((p) => !SHOTS[p.title])
 
   return (
-    <section id="projects" data-chapter="paper" className="ch-paper bg-ground text-ink py-24 md:py-28 overflow-hidden">
+    <section id="projects" data-chapter="paper" className="ch-paper bg-ground text-ink py-24 md:py-28">
       <div className="frame">
         <h2 data-reveal className="t-head">Client work</h2>
       </div>
@@ -82,15 +88,15 @@ export default function Projects() {
             <article key={project.id} className="frame grid lg:grid-cols-12 gap-x-6">
               <div
                 data-reveal
-                className={`relative overflow-hidden aspect-[4/5] md:aspect-[16/10] lg:aspect-auto ${shots.height} w-[110%] md:w-[calc(100%+var(--frame))] lg:w-auto -ml-[var(--frame)] lg:col-span-7`}
+                className="overflow-hidden lg:col-span-7 lg:self-start lg:sticky lg:top-[calc(var(--header)+2rem)]"
               >
                 <Image
                   src={shots.big.src}
                   alt={shots.big.alt}
                   width={shots.big.width}
                   height={shots.big.height}
-                  sizes="(min-width: 1024px) 60vw, 110vw"
-                  className="drift absolute inset-0 h-full w-full object-cover object-left-top mix-blend-multiply"
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  className="h-auto w-full mix-blend-multiply"
                 />
               </div>
 
