@@ -7,6 +7,7 @@ import portfolioData from '@/data/portfolio.json'
 export default function Contact() {
   const { personal } = portfolioData
   const [message, setMessage] = useState('')
+  const [sentUrl, setSentUrl] = useState('')
 
   // Sends what the visitor typed straight into a WhatsApp chat
   const send = (e: React.FormEvent) => {
@@ -15,6 +16,7 @@ export default function Contact() {
     // encodeURIComponent, not URLSearchParams: WhatsApp can show "+" literally instead of a space
     const url = text ? `${personal.whatsapp.split('?')[0]}?text=${encodeURIComponent(text)}` : personal.whatsapp
     window.open(url, '_blank', 'noopener,noreferrer')
+    setSentUrl(url)
   }
 
   const phoneHref = `tel:${personal.phone.replace(/[^+\d]/g, '')}`
@@ -36,27 +38,37 @@ export default function Contact() {
           style={{ '--d': '160ms' } as React.CSSProperties}
           className="mt-10 max-w-[640px]"
         >
-          <div className="relative">
+          <label htmlFor="contact-message" className="block t-small text-soft">
+            Your message
+          </label>
+          <div className="mt-2 flex flex-col sm:flex-row gap-3">
             <input
+              id="contact-message"
               type="text"
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              aria-labelledby="contact-title"
               aria-describedby="contact-help"
-              className="w-full h-16 bg-paper text-eclipse placeholder:text-[#4F5F78] pl-5 pr-20 t-body outline-none focus:ring-2 focus:ring-inset focus:ring-honey"
+              className="flex-1 min-w-0 h-14 bg-paper text-eclipse placeholder:text-[#4F5F78] px-5 t-body outline-none focus:ring-2 focus:ring-inset focus:ring-honey"
               placeholder="e.g. Bookings come in by WhatsApp and get lost"
             />
-            <button
-              type="submit"
-              aria-label="Send on WhatsApp"
-              className="btn absolute right-2 top-2 !min-h-0 h-12 w-12 !p-0"
-            >
-              <ArrowRight size={20} weight="bold" aria-hidden />
+            <button type="submit" className="btn !min-h-14">
+              Send on WhatsApp
+              <ArrowRight size={18} weight="bold" aria-hidden />
             </button>
           </div>
-          <p id="contact-help" className="mt-4 t-small text-soft">
-            Opens WhatsApp with your message.
+          <p id="contact-help" role="status" className="mt-4 t-small text-soft">
+            {sentUrl ? (
+              <>
+                WhatsApp opened in a new tab. Didn&apos;t open?{' '}
+                <a href={sentUrl} target="_blank" rel="noopener noreferrer" className="link text-ink">
+                  Use this link
+                </a>
+                .
+              </>
+            ) : (
+              'Opens WhatsApp with your message.'
+            )}
           </p>
         </form>
 

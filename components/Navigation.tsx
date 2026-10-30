@@ -71,7 +71,7 @@ export default function Navigation() {
               {label}
             </a>
           ))}
-          <a href={personal.whatsapp} target="_blank" rel="noopener noreferrer" className="btn">
+          <a href={personal.booking || personal.whatsapp} target="_blank" rel="noopener noreferrer" className="btn">
             Book a free 30-min call
           </a>
         </div>
@@ -102,7 +102,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href={personal.whatsapp}
+            href={personal.booking || personal.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
