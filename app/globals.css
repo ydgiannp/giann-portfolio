@@ -61,9 +61,10 @@ p { text-wrap: pretty; }
   .tabular { font-variant-numeric: tabular-nums; }
 }
 
-/* One button shape for the whole page: square, flat honey fill */
+/* One button shape for the whole page: 4px corners, flat honey fill */
 @layer components {
 .btn {
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
