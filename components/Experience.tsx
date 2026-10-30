@@ -1,6 +1,19 @@
 import { Fragment } from 'react'
 import { Briefcase, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
+import { highlight } from '@/components/About'
+
+// Same highlighter as About: the results a client cares about
+const MARKS = [
+  'team of 4 engineers',
+  '457 new subscribers a day',
+  '12,500+ payments a month',
+  'Production issues traced in under 30 minutes',
+  'Stays up when breaking news hits',
+  'Faster first load',
+  'faster page loads',
+  'first open API',
+]
 
 export default function Experience() {
   const { experience } = portfolioData
@@ -14,8 +27,8 @@ export default function Experience() {
           <span className="block md:pl-[16.66%]">record</span>
         </h2>
         <p data-reveal style={{ '--d': '80ms' } as React.CSSProperties} className="mt-10 t-lead max-w-[40ch]">
-          I also work as a Software Engineer Lead at Kompas.id, where my team runs a payment system that
-          handles 12,500+ transactions a month.
+          Most of what I build for clients, I first learned at Kompas.id, where a slow page or a failed
+          payment costs real readers and real revenue.
         </p>
 
         <table data-reveal style={{ '--d': '160ms' } as React.CSSProperties} className="mt-20 w-full border-collapse text-left max-md:block">
@@ -55,11 +68,11 @@ export default function Experience() {
                         </td>
                         <td className={`md:py-3.5 md:pr-4 align-top max-md:block ${k === 0 ? 'max-md:mt-2' : ''}`}>
                           {k === 0 ? (
-                            line
+                            highlight(line, MARKS)
                           ) : (
                             <span className="flex gap-2">
                               <CheckCircle aria-hidden weight="duotone" className="shrink-0 w-[1.1em] h-[1.1em] mt-[0.2em] text-soft" />
-                              {line}
+                              <span>{highlight(line, MARKS)}</span>
                             </span>
                           )}
                         </td>

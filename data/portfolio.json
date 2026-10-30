@@ -7,7 +7,7 @@
     "whatsapp": "https://wa.me/6285640418447?text=Hi%20Yulius%2C%20I%27d%20like%20to%20talk%20about%20my%20business.",
     "booking": "https://calendar.app.google/SVLwgUWGHXk1k44PA",
     "location": "Jakarta, Indonesia",
-    "bio": "I've spent 9+ years building software. Today I'm a Software Engineer Lead at Kompas.id, and I work with business owners as their part-time CTO. I listen to how the business runs, decide what's worth building, build it, and stay around to keep it working.",
+    "bio": "I've spent 10+ years building software. Today I'm a Software Engineer Lead at Kompas.id, and I work with business owners as their part-time CTO. I listen to how the business runs, decide what's worth building, build it, and stay around to keep it working.",
     "social": {
       "github": "https://github.com/ydgiannp",
       "linkedin": "https://www.linkedin.com/in/yulius-giann-951677124/"
@@ -57,9 +57,9 @@
     {
       "id": 1,
       "title": "Rentalnow.id",
-      "description": "Motorcycle rental · Jakarta",
+      "description": "Motorcycle rental marketplace · Jakarta",
       "problem": "The owner tracked bikes and bookings through WhatsApp chats and paper notes. There was no single place to see which bikes were free or due for service.",
-      "outcome": "One dashboard shows the whole fleet: availability, orders, and maintenance schedules, with a booking calendar. Customers book online at rentalnow.id.",
+      "outcome": "Fleet owners run their whole fleet from one dashboard: orders, bookings, maintenance schedules, and blocking out dates when a bike is unavailable, all synced to a calendar. Customers book online at rentalnow.id.",
       "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase", "Prisma", "Netlify"],
       "demo": "https://rentalnow.id",
       "featured": true
@@ -82,7 +82,7 @@
       "id": 3,
       "title": "Kemkominfo",
       "description": "QR attendance system · Government ministry",
-      "outcome": "Guests register online, check in at the event by scanning a QR code, and collect their goodie bag the same way. The committee tracks attendance and goodie bag handouts in one place, with no handwritten lists to recap.",
+      "outcome": "Training participants register online, check in by scanning a QR code, and collect their goodie bag the same way. The committee watches attendance and goodie bag handouts on a live dashboard, with no handwritten lists to recap.",
       "technologies": [],
       "featured": false,
       "testimonial": {
@@ -93,8 +93,8 @@
     {
       "id": 4,
       "title": "Penggalan Cerita",
-      "description": "Digital wedding invitations",
-      "outcome": "Couples share their wedding invitation as a single link that guests open on their phone.",
+      "description": "Wedding invitations and RSVP",
+      "outcome": "Couples share their invitation as a single link. Guests RSVP from their phone and check in at the venue by scanning a QR code.",
       "technologies": [],
       "featured": false
     }
@@ -105,13 +105,13 @@
       "company": "Kompas.id",
       "position": "Software Engineer Lead",
       "duration": "Oct 2021 - Present",
-      "description": "I lead a team of 4 engineers at one of Indonesia's largest news publishers, where outages and slow pages cost readers and subscription revenue.",
+      "description": "I lead a team of 4 engineers at one of Indonesia's largest news publishers.",
       "achievements": [
-        "Built an add-on subscription with automatic recurring payments that brings in 457 new subscribers a day",
-        "Rebuilt the payment system end to end; it now handles 12,500+ transactions a month",
-        "Set up monitoring across 5 services so the cause of a production issue is found in under 30 minutes",
-        "Made the web and mobile homepages load faster for first-time visitors",
-        "Run 1-on-1s, mentor the team, and prioritize work against business goals"
+        "457 new subscribers a day from an add-on subscription I designed, with tokenized recurring payments on saved cards and e-wallets (GoPay, OVO, ShopeePay)",
+        "12,500+ payments a month through a payment service my team rebuilt end to end (Laravel to Vue.js, event-driven backend with background jobs)",
+        "Production issues traced in under 30 minutes, with OpenTelemetry and SigNoz across 5 microservices",
+        "Stays up when breaking news hits: Redis caching and Google Cloud Functions absorb traffic spikes and keep editorial updates on time",
+        "Faster first load on the web and mobile homepages through static content delivery"
       ]
     },
     {
@@ -121,7 +121,7 @@
       "duration": "Sep 2017 - Sep 2021",
       "description": "Built and maintained the reader-facing website of kompas.id.",
       "achievements": [
-        "Moved the site from WordPress to a modern framework with faster page loads"
+        "Moved kompas.id from WordPress to Nuxt.js and Tailwind with every feature intact and faster page loads"
       ]
     },
     {
@@ -131,7 +131,7 @@
       "duration": "Apr 2016 - Jul 2017",
       "description": "Worked on an accounting platform used by businesses across Indonesia.",
       "achievements": [
-        "Built the company's first open API, so other businesses could connect their own apps to their accounting data"
+        "Built the company's first open API (OAuth 2.0) and its developer center, so other businesses could connect their apps to their accounting data"
       ]
     }
   ],

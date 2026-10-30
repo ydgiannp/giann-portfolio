@@ -55,7 +55,7 @@ const websiteSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Yulius Giann | Part-time CTO for Growing Businesses',
-  description: "I turn how your business runs into software and keep it running after launch. 9+ years building products, including Kompas.id's payment system.",
+  description: "I turn how your business runs into software and keep it running after launch. 10+ years building products, including Kompas.id's payment system.",
   keywords: [
     'Part-time CTO', 'Fractional CTO', 'IT Partner', 'Software Developer', 'Web Developer',
     'Booking System', 'Business Software', 'Jakarta', 'Indonesia',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Yulius Giann | Part-time CTO for Growing Businesses',
-    description: "I turn how your business runs into software and keep it running after launch. 9+ years building products, including Kompas.id's payment system.",
+    description: "I turn how your business runs into software and keep it running after launch. 10+ years building products, including Kompas.id's payment system.",
     url: siteUrl,
     siteName: 'Yulius Giann Portfolio',
     type: 'website',
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Yulius Giann | Part-time CTO for Growing Businesses',
-    description: "I turn how your business runs into software and keep it running after launch. 9+ years building products, including Kompas.id's payment system.",
+    description: "I turn how your business runs into software and keep it running after launch. 10+ years building products, including Kompas.id's payment system.",
     creator: '@ydgiannp',
   },
   alternates: {
