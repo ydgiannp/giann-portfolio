@@ -79,6 +79,9 @@ p { text-wrap: pretty; }
   transition: background-color 200ms var(--ease-out), transform 200ms var(--ease-out);
 }
 .btn:hover { background: #EDDDA0; }
+/* On the honey chapter the button turns eclipse so it stays visible */
+.btn-dark { background: #213555; color: #F3F5F8; }
+.btn-dark:hover { background: #4F709C; }
 .btn:active { transform: translateY(1px); }
 }
 

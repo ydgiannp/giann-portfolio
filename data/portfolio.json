@@ -16,19 +16,19 @@
   "services": [
     {
       "title": "Turn your business into a plan",
-      "description": "You explain how things work today: WhatsApp orders, spreadsheets, paper forms. I map it into a written scope that says what to build first, what can wait, and what it will cost."
+      "description": "Your WhatsApp orders, spreadsheets and paper forms, mapped into a written scope with a price."
     },
     {
       "title": "Build the software",
-      "description": "Booking systems, admin dashboards, property listings, QR attendance, online payments. I build them with the same practices I use for Kompas.id's payment system."
+      "description": "Booking systems, dashboards and online payments, built around how your business already works."
     },
     {
       "title": "Make the technical calls",
-      "description": "Hosting, tools, vendors, architecture. I choose them and explain why in plain language. If your team builds with AI, I review what they ship so it stays secure and holds up as you grow."
+      "description": "Hosting, tools and vendors chosen and explained in plain language. AI-built code reviewed."
     },
     {
       "title": "Keep it running",
-      "description": "After launch I fix what breaks and stay on call as your technical advisor. You get one person to call instead of an IT department to hire."
+      "description": "I fix what breaks after launch. One person to call, not an IT department to hire."
     }
   ],
   "process": [
