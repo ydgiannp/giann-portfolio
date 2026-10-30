@@ -30,8 +30,8 @@ export function GET() {
       const outcome = 'outcome' in p ? `- **Outcome:** ${(p as { outcome: string }).outcome}\n` : ''
       const tech = p.technologies.length ? `- **Tech:** ${p.technologies.join(', ')}\n` : ''
       const live = 'demo' in p ? `- **Live:** ${(p as { demo: string }).demo}\n` : ''
-      const t = (p as { testimonial?: { quote: string; author: string } }).testimonial
-      const quote = t ? `- **Client says:** "${t.quote}" — ${t.author}` : ''
+      const t = (p as { testimonial?: { quote: string; author: string; role: string } }).testimonial
+      const quote = t ? `- **Client says:** "${t.quote}" — ${t.author}, ${t.role}` : ''
       return `### ${p.title}${featured}\n${p.description}\n${problem}${outcome}${tech}${live}${quote}`.trimEnd()
     })
     .join('\n\n')

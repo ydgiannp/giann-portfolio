@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import portfolioData from '@/data/portfolio.json'
+import { highlight } from '@/components/About'
 
-type Project = {
+export type Project = {
   id: number
   title: string
   description: string
@@ -12,8 +13,11 @@ type Project = {
   github?: string
   demo?: string
   featured: boolean
-  testimonial?: { quote: string; author: string }
+  testimonial?: { quote: string; author: string; role: string; excerpt: string }
 }
+
+// One headline result per case, in the same highlighter as About and Track record
+const MARKS = ['1,300+ bookings', '160+ buyers have signed up']
 
 type Shots = {
   big: { src: string; alt: string; width: number; height: number }
@@ -26,9 +30,9 @@ const SHOTS: Record<string, Shots> = {
     big: { src: '/work/rentalnow-home.jpg', alt: 'Rentalnow.id home page with the booking form for motorbikes, cars and laptops', width: 2520, height: 2600 },
     small: { src: '/work/rentalnow-fleet.jpg', alt: 'Rentalnow.id list of motorbikes with daily prices', width: 1440, height: 900 },
   },
-  'Prophack Japan': {
-    big: { src: '/work/prophack-results.jpg', alt: 'Prophack Japan search results showing condo listings with photos, prices in yen and dollars, and floor area', width: 2560, height: 1640 },
-    small: { src: '/work/prophack-detail.jpg', alt: 'Prophack Japan property detail page with a photo gallery and price', width: 2560, height: 1640 },
+  'PROPHACKJAPAN': {
+    big: { src: '/work/prophack-results.jpg', alt: 'PROPHACKJAPAN search results showing condo listings with photos, prices in yen and dollars, and floor area', width: 2560, height: 1640 },
+    small: { src: '/work/prophack-detail.jpg', alt: 'PROPHACKJAPAN property detail page with a photo gallery and price', width: 2560, height: 1640 },
   },
 }
 
@@ -44,16 +48,8 @@ function CaseText({ project }: { project: Project }) {
       )}
       <p className="mt-4">
         <strong className="font-semibold">After. </strong>
-        {project.outcome}
+        {highlight(project.outcome, MARKS)}
       </p>
-      {project.testimonial && (
-        <figure className="mt-6 border-l-2 border-current pl-4">
-          <blockquote className="italic">“{project.testimonial.quote}”</blockquote>
-          <figcaption className="mt-3 t-small text-soft">
-            {project.testimonial.author}
-          </figcaption>
-        </figure>
-      )}
       <p className="mt-6 t-small text-soft">{project.technologies.join(', ')}</p>
       {project.demo && (
         <a

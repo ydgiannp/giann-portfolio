@@ -57,25 +57,27 @@
     {
       "id": 1,
       "title": "Rentalnow.id",
-      "description": "Motorcycle rental marketplace · Jakarta",
+      "description": "Motorcycle rental · 3 branches in Jakarta",
       "problem": "The owner tracked bikes and bookings through WhatsApp chats and paper notes. There was no single place to see which bikes were free or due for service.",
-      "outcome": "Fleet owners run their whole fleet from one dashboard: orders, bookings, maintenance schedules, and blocking out dates when a bike is unavailable, all synced to a calendar. Customers book online at rentalnow.id.",
+      "outcome": "One dashboard runs 3 branches and 42 motorcycles: orders, availability, and a booking calendar, with every oil change, tyre, and battery logged. Since launch in August 2025 it has handled 1,300+ bookings, and monthly bookings have more than doubled this year. Customers book online at rentalnow.id.",
       "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Firebase", "Prisma", "Netlify"],
       "demo": "https://rentalnow.id",
       "featured": true
     },
     {
       "id": 2,
-      "title": "Prophack Japan",
+      "title": "PROPHACKJAPAN",
       "description": "Japanese property listings",
-      "problem": "Listings lived in spreadsheets and inquiries arrived by email, so replies were slow and some leads were missed.",
-      "outcome": "Buyers search listings, save their preferences, and get matched to properties that fit. Every inquiry comes through the site into one place. Their team now builds new features themselves with AI coding tools, and I review each one as their technical advisor.",
+      "problem": "Listings lived in a spreadsheet, so buyers could not browse or search them on their own.",
+      "outcome": "773 listings are now published on a searchable site, with 467 live and 294 marked sold. Since the public launch in August 2026, 160+ buyers have signed up, and signups have grown every month: 27, then 52, then 94 in October. Their team now builds new features themselves with AI coding tools, and I review each one as their technical advisor.",
       "technologies": ["Nuxt.js", "Vue.js", "TypeScript", "Nuxt/UI", "Supabase", "Vercel"],
       "demo": "https://prophackjapan.com",
       "featured": true,
       "testimonial": {
         "quote": "Mr. Yulius has been instrumental in the system’s foundational design—specifically regarding database development, the selection and integration of various tools and services, and the establishment of protocols for data exchange. His insights and proposals for strengthening security, along with his precise, well-founded advice, have served as an invaluable source of support. Mr. Yulius approaches his work with great integrity; he consistently grasps our intentions—even when we lack technical expertise—and responds in a timely manner. This ensures that our project progresses smoothly, even though we work from different locations.",
-        "author": "Ryo Amasawa, CEO, Japan Direct Investment Co., Ltd."
+        "author": "Ryo Amasawa",
+        "role": "CEO, Japan Direct Investment Co., Ltd.",
+        "excerpt": "He consistently grasps our intentions—even when we lack technical expertise—and responds in a timely manner."
       }
     },
     {
@@ -87,7 +89,9 @@
       "featured": false,
       "testimonial": {
         "quote": "Before Penerimatamu.com, event attendance was still done by hand on paper. Now everything is digital, from registration and check-in at the event to goodie bag redemption. Registration and attendance are more practical, faster, and organized, and the committee can easily keep track of participant data and goodie bag distribution. Penerimatamu.com really helps our events run more efficiently and professionally.",
-        "author": "Event committee, Kemkominfo"
+        "author": "Event committee",
+        "role": "Kemkominfo",
+        "excerpt": "Now everything is digital, from registration and check-in at the event to goodie bag redemption."
       }
     },
     {
@@ -142,7 +146,7 @@
     },
     {
       "question": "Our team already builds with AI. Why would we need you?",
-      "answer": "AI writes code fast. It also writes security holes, slow pages, and payment bugs without warning you. I review each feature your team builds, the way I do for Prophack Japan, so you keep the speed and catch the problems early."
+      "answer": "AI writes code fast. It also writes security holes, slow pages, and payment bugs without warning you. I review each feature your team builds, the way I do for PROPHACKJAPAN, so you keep the speed and catch the problems early."
     },
     {
       "question": "I'm not technical. Can we still work together?",
