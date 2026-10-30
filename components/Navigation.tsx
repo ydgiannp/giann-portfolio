@@ -71,20 +71,30 @@ export default function Navigation() {
               {label}
             </a>
           ))}
-          <a href={personal.whatsapp} target="_blank" rel="noopener noreferrer" className="btn">
+          <a href={personal.booking || personal.whatsapp} target="_blank" rel="noopener noreferrer" className="btn">
             Book a free 30-min call
           </a>
         </div>
 
-        <button
-          className="lg:hidden -mr-2 p-2 text-ink"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-        >
-          {menuOpen ? <X size={24} /> : <List size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <a
+            href={personal.booking || personal.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn !min-h-10 !px-4"
+          >
+            Book a call
+          </a>
+          <button
+            className="-mr-2 p-2 text-ink"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            {menuOpen ? <X size={24} /> : <List size={24} />}
+          </button>
+        </div>
       </nav>
 
       {menuOpen && (
@@ -102,7 +112,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href={personal.whatsapp}
+            href={personal.booking || personal.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}

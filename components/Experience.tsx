@@ -18,7 +18,7 @@ export default function Experience() {
           handles 12,500+ transactions a month.
         </p>
 
-        <table data-reveal style={{ '--d': '160ms' } as React.CSSProperties} className="mt-[72px] w-full border-collapse text-left max-md:block">
+        <table data-reveal style={{ '--d': '160ms' } as React.CSSProperties} className="mt-20 w-full border-collapse text-left max-md:block">
           <caption className="sr-only">Roles and what I delivered in each</caption>
           <thead className="sr-only">
             <tr>

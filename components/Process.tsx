@@ -29,11 +29,11 @@ export default function Process() {
         >
           {process.map((step, i) => {
             const Icon = ICONS[i % ICONS.length]
-            const icon = <Icon aria-hidden weight="duotone" size={22} className="shrink-0" />
+            const icon = <Icon aria-hidden weight="duotone" size={24} className="shrink-0" />
             return (
               <li key={step.title} className="mt-7">
                 {i === last ? (
-                  <p className="-mx-6 sm:-mx-8 px-6 sm:px-8 min-h-[44px] flex items-center gap-2.5 bg-eclipse text-paper font-semibold">
+                  <p className="-mx-6 sm:-mx-8 px-6 sm:px-8 min-h-11 flex items-center gap-2.5 bg-eclipse text-paper font-semibold">
                     {icon}
                     {step.title}
                   </p>
@@ -43,7 +43,7 @@ export default function Process() {
                     {step.title}
                   </p>
                 )}
-                <p className="mt-1 pl-[32px] text-soft">{step.description}</p>
+                <p className="mt-1 pl-8 text-soft">{step.description}</p>
               </li>
             )
           })}
