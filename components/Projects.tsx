@@ -19,21 +19,12 @@ export type Project = {
 // One headline result per case, in the same highlighter as About and Track record
 const MARKS = ['1,300+ bookings', '160+ buyers have signed up']
 
-type Shots = {
-  big: { src: string; alt: string; width: number; height: number }
-  small: { src: string; alt: string; width: number; height: number }
-}
+type Shot = { src: string; alt: string; width: number; height: number }
 
 // Screenshots taken from the live client sites
-const SHOTS: Record<string, Shots> = {
-  'Rentalnow.id': {
-    big: { src: '/work/rentalnow-home.jpg', alt: 'Rentalnow.id home page with the booking form for motorbikes, cars and laptops', width: 2520, height: 2600 },
-    small: { src: '/work/rentalnow-fleet.jpg', alt: 'Rentalnow.id list of motorbikes with daily prices', width: 1440, height: 900 },
-  },
-  'PROPHACKJAPAN': {
-    big: { src: '/work/prophack-results.jpg', alt: 'PROPHACKJAPAN search results showing condo listings with photos, prices in yen and dollars, and floor area', width: 2560, height: 1640 },
-    small: { src: '/work/prophack-detail.jpg', alt: 'PROPHACKJAPAN property detail page with a photo gallery and price', width: 2560, height: 1640 },
-  },
+const SHOTS: Record<string, Shot> = {
+  'Rentalnow.id': { src: '/work/rentalnow-home.jpg', alt: 'Rentalnow.id home page with the booking form for motorbikes, cars and laptops', width: 2520, height: 2600 },
+  'PROPHACKJAPAN': { src: '/work/prophack-results.jpg', alt: 'PROPHACKJAPAN search results showing condo listings with photos, prices in yen and dollars, and floor area', width: 2560, height: 1640 },
 }
 
 function CaseText({ project }: { project: Project }) {
@@ -79,7 +70,7 @@ export default function Projects() {
 
       <div className="mt-16 md:mt-24 space-y-24 md:space-y-36">
         {shown.map((project) => {
-          const shots = SHOTS[project.title]
+          const shot = SHOTS[project.title]
           return (
             <article key={project.id} className="frame grid lg:grid-cols-12 gap-x-6">
               <div
@@ -87,33 +78,19 @@ export default function Projects() {
                 className="overflow-hidden lg:col-span-7 lg:self-start lg:sticky lg:top-[calc(var(--header)+2rem)]"
               >
                 <Image
-                  src={shots.big.src}
-                  alt={shots.big.alt}
-                  width={shots.big.width}
-                  height={shots.big.height}
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={shot.width}
+                  height={shot.height}
                   sizes="(min-width: 1024px) 60vw, 100vw"
                   className="h-auto w-full mix-blend-multiply"
                 />
               </div>
 
-              <div className="lg:col-start-9 lg:col-span-4 lg:self-end mt-10 lg:mt-0 max-w-[60ch] lg:max-w-none">
+              <div className="lg:col-start-8 lg:col-span-5 lg:self-end mt-10 lg:mt-0 max-w-[60ch] lg:max-w-none">
                 <h3 data-reveal className="t-head">{project.title}</h3>
                 <div data-reveal style={{ '--d': '80ms' } as React.CSSProperties}>
                   <CaseText project={project} />
-                </div>
-                <div
-                  data-reveal
-                  style={{ '--d': '160ms' } as React.CSSProperties}
-                  className="mt-10 ml-auto lg:ml-0 w-[70%] lg:w-full aspect-[16/10] relative overflow-hidden"
-                >
-                  <Image
-                    src={shots.small.src}
-                    alt={shots.small.alt}
-                    width={shots.small.width}
-                    height={shots.small.height}
-                    sizes="(min-width: 1024px) 30vw, 70vw"
-                    className="absolute inset-0 h-full w-full object-cover object-left-top mix-blend-multiply"
-                  />
                 </div>
               </div>
             </article>
