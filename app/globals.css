@@ -127,6 +127,27 @@ p { text-wrap: pretty; }
   transform: none;
 }
 
+/* Process route: each stop fills and the line to the next one draws in as it reveals */
+.route-line {
+  transform-origin: top;
+  transition: transform 700ms var(--ease-out);
+  transition-delay: calc(var(--d, 0ms) + 250ms);
+}
+.route-dot {
+  transition: background-color 400ms var(--ease-out);
+  transition-delay: calc(var(--d, 0ms) + 150ms);
+}
+@media (min-width: 1024px) {
+  .route-line { transform-origin: left; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal]:not(.is-in) .route-line { transform: scaleY(0); }
+  .js [data-reveal]:not(.is-in) .route-dot { background-color: transparent; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+  .js [data-reveal]:not(.is-in) .route-line { transform: scaleX(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
